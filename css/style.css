@@ -1,0 +1,208 @@
+/*Main Body */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/* Register HTML and Login HTML */
+.loginbox{
+    width: 220;
+    height: 350px;
+    background-color: black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 40;
+}
+
+h1{
+    position: relative;
+    bottom: 10;
+    color: white;
+    font-size: 25;
+    font-weight: 100;
+    font-family: sans-serif;
+}
+.loginbox p{
+    color: white;
+    position: relative;
+    top: 12px;
+    font-weight: bold;
+
+}
+.loginbox input[type="text"],input[type="password"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.loginbox input[type="text"]{
+    position: relative;
+    top: 18px;
+}
+
+.loginbutton{
+    border: none;
+    height: 30;
+    outline: none;
+    position: relative;
+    background-color: rgb(199, 58, 58);
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 90%;
+    bottom: 15;
+}
+.loginbutton:hover{
+    transition: 0.3s;
+    background-color: rgb(161, 24, 24);
+}
+/* Reset Password HTML */
+.loginbox-1{
+    width: 220;
+    height: 250px;
+    background-color: black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 40;
+}
+.loginbox-1 p{
+    color: white;
+    position: relative;
+    top: 12px;
+    font-weight: bold;
+
+}
+.loginbox-1 input[type="text"],input[type="password"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.loginbox-1 input[type="text"]{
+    position: relative;
+    top: 18px;
+}
+#reset-button{
+    top: 10;
+}
+#go-back{
+    top: 25px;
+}
+
+
+.stuff{
+    position: relative;
+    bottom: 35;
+    height: 50%;
+}
+.stuff-1{
+    position: relative;
+    bottom: 35;
+    height: 50%;
+}
+
+.linker{
+    position: relative;
+    font-size: 15;
+    text-decoration: none;
+    color: darkgray;
+}
+.linker1{
+    position: relative;
+    top: 10;
+    font-size: 15;
+    text-decoration: none;
+    color: darkgray;
+}
+#asd{
+    top: 30;
+}
+#ass{
+    top: 40;
+}
+
+#wrongmail{
+    font-size: small;
+    color: rgb(209, 46, 46);
+    visibility: hidden;
+    font-family: sans-serif;
+}
+#wrongmail1{
+    font-size: small;
+    color: rgb(209, 46, 46);
+    visibility: hidden;
+    font-family: sans-serif;
+}
+#wrongpassword{
+    font-size: small;
+    color: rgb(209, 46, 46);
+    position: relative; 
+    top: -7;
+    visibility: hidden;
+    font-family: sans-serif;
+}
+.emailstuff{
+    position: relative; 
+    top: 7;
+}
+.popup{
+    width: 250;
+    height: 150px;
+    background-color: rgb(47, 47, 47);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: -50%;
+    left: 50%;
+    padding: 40;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.popup p{
+    color: white;
+    font-family: sans-serif;
+}
+.popup h1{
+    color: white;
+    font-family: sans-serif;
+    font-size: 25;
+}
+.popup img{
+    width: 100px;
+    margin-top: -90px;
+}
+.popup button{
+    width: 75%;
+    height: 30;
+    background-color: rgb(199, 58, 58);
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+.popup button:hover{
+    transition: 0.3s;
+    background-color: rgb(161, 24, 24);
+}
+.fade-in{
+    top: 50%;
+    opacity: 1;
+}
+.blur{
+    background-image: url("https://olildu.github.io/mujconnect/images/manipal-university.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.fader{
+    filter: blur(4px);
+}

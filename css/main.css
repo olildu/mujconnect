@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.applications-contents img{
+    height: 150;
+    position: relative;
+    right: 20;
+    bottom: 25;
+}
+.applications-contents p{
+    position: relative;
+    left: 25;
+    font-family: sans-serif;
+    font-size: 20;
+}
+.chat-div{
+    width: 300;
+    height: 200;
+    background-color: rgb(221, 209, 209);
+    position: absolute;
+    transform: translate(-120%,-90%);
+    top: 50%;
+    left: 50%;
+    padding: 40;
+    background-image: url('https://olildu.github.io/mujconnect/images/chat.png');
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 2px 5px 5px rgb(214, 213, 213);
+}
+.chat-div img{
+    position: relative;
+    right: 28;
+}
+
+
+.chat-div:hover{
+    transition: 0.3s;
+    background-color: rgb(173, 163, 163);;
+}
+.note-div{
+    width: 300;
+    height: 200;
+    background-color: rgb(221, 209, 209);
+    position: absolute;
+    transform: translate(20%,-90%);
+    top: 50%;
+    left: 50%;
+    padding: 40;
+
+    background-image: url('https://olildu.github.io/mujconnect/images/test.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px 5px rgb(214, 213, 213);
+
+    border-radius: 0px;
+}
+.note-div:hover{
+    transition: 0.3s;
+    background-color: rgb(173, 163, 163);;
+}
+
+.note-div img{
+    width: 200;
+}
+.nav-header{
+    font-family: sans-serif;
+    width: 100%;
+    height: 40;
+    background-color: rgb(158, 105, 34);
+    box-shadow: 0px 1px 2px 1px rgb(177, 174, 174);
+    z-index: 1;
+}
+.nav-header h1{
+    font-size: 25;
+    position: absolute;
+    left: 2%;
+    font-weight: lighter;
+    top: -11;
+    color: white;
+}
+.border-guard{
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 20;
+    background-color: white;
+}
+.signout{
+    border: none;
+    height: 30;
+    outline: none;
+    position: relative;
+    background-color: rgb(199, 58, 58);
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 90;
+    top: 3;
+    left: 1180;
+}
