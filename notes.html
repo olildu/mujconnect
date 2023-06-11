@@ -1,12 +1,15 @@
 <html>
     <head>
-        <title>
-            Notes
-        </title>
+        <title>Notes</title>
         <link rel="stylesheet" href="css/notes.css">
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
     </head>
     <body>
-        <input class="take-notes" placeholder="Take a note...">
-
+        <div class="nav-header">
+            <h1>Welcome to MUJ Connect</h1>
+            <button id="clicker" class="clicker"><img src="/images/check1.png" class="submitpng" border="0" /></button>
+        </div>
+        <input id="take-notes" class="take-notes" placeholder="Take a note...">
     </body>
-    <script src="javascript/notes.js" ></script>
+    <script src="javascript/notes.js" type="module"></script>
