@@ -5,7 +5,7 @@ body{
     font-family: sans-serif;
 }
 /* Register HTML and Login HTML */
-.loginbox{
+.loginbox{  
     width: 220;
     height: 350px;
     background-color: black;
@@ -205,4 +205,10 @@ h1{
 }
 .fader{
     filter: blur(4px);
+}
+
+@media screen and (max-width: 600px){
+    .loginbox{
+        width: 200px;
+    }
 }
