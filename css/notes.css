@@ -19,6 +19,7 @@ body{
     color: #696868;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.219);
     border-radius: 2%;
+    resize: none;
 }
 .take-notes::placeholder{
     color: rgb(100, 98, 98);           
@@ -59,9 +60,12 @@ body{
     right: 5px;
     top: 2px;
     border-radius: 10%;
-    transition: all 0.2s ease-in-out;
 }
 .clicker:hover{
     color: rgba(255, 255, 255, 1);
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+.take-notes textarea {
+    border: .2rem solid #000;
+    resize: vertical;
 }

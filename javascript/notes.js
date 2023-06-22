@@ -23,4 +23,6 @@ document.getElementById("clicker").addEventListener("click", function() {
     set(ref(database, '/'+uid), {
       notes: note
       });
+    document.getElementById('take-notes').value = ''
 })
+
