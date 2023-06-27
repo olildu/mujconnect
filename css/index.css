@@ -5,17 +5,6 @@ body{
     font-family: sans-serif;
 }
 /* Register HTML and Login HTML */
-.loginbox{  
-    width: 220;
-    height: 350px;
-    background-color: black;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    padding: 40;
-}
-
 h1{
     position: relative;
     bottom: 10;
@@ -24,26 +13,6 @@ h1{
     font-weight: 100;
     font-family: sans-serif;
 }
-.loginbox p{
-    color: white;
-    position: relative;
-    top: 12px;
-    font-weight: bold;
-
-}
-.loginbox input[type="text"],input[type="password"]{
-    border: none;
-    outline: none;
-    height: 40px;
-    background: transparent;
-    color: white;
-    border-bottom: 1px solid white;
-}
-.loginbox input[type="text"]{
-    position: relative;
-    top: 18px;
-}
-
 .loginbutton{
     border: none;
     height: 30;
@@ -62,8 +31,8 @@ h1{
 }
 /* Reset Password HTML */
 .loginbox-1{
-    width: 220;
-    height: 250px;
+    width: 240;
+    height: 220px;
     background-color: black;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -90,11 +59,11 @@ h1{
     position: relative;
     top: 18px;
 }
-#reset-button{
-    top: 10;
+#done-button{
+    top: 7vh;
 }
 #go-back{
-    top: 25px;
+    top: 10vh;
 }
 
 
@@ -125,31 +94,7 @@ h1{
 #asd{
     top: 30;
 }
-#ass{
-    top: 40;
-}
-
-#wrongmail{
-    font-size: small;
-    color: rgb(209, 46, 46);
-    visibility: hidden;
-    font-family: sans-serif;
-}
-#wrongmail1{
-    font-size: small;
-    color: rgb(209, 46, 46);
-    visibility: hidden;
-    font-family: sans-serif;
-}
-#wrongpassword{
-    font-size: small;
-    color: rgb(209, 46, 46);
-    position: relative; 
-    top: -7;
-    visibility: hidden;
-    font-family: sans-serif;
-}
-.emailstuff{
+.username-stuff{
     position: relative; 
     top: 7;
 }
@@ -202,9 +147,6 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.fader{
-    filter: blur(4px);
 }
 #username{
     position: relative;

@@ -9,7 +9,7 @@ body{
     height: 200px;
     background-color: #e6f0ef;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-23vh);
     top: 35%;
     left: 50%;
     border-radius: 5px;
@@ -68,4 +68,45 @@ body{
 .take-notes textarea {
     border: .2rem solid #000;
     resize: vertical;
+}
+.saved-notes{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 52%;
+    left: 50%;
+    color: #bdb3b3;
+}
+.left{
+    background-color: #c2bcbc;
+    height: 1px;
+    width: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: -35%;
+}
+.right{
+    background-color: #c2bcbc;
+    height: 1px;
+    width: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    right: -90%;
+}
+
+@media screen and (max-width: 600px){
+    .take-notes{
+        width: 60%;
+        height: 150px;
+        position: absolute;
+        transform: translate(-50%,-23vh);
+    }
+    .nav-header h1{
+        font-size: 20px;
+        top: -5px;
+    }
+    .saved-notes{
+    transform: translate(-50%,-20vh);
+    }
 }

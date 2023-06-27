@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -28,11 +28,23 @@ document.getElementById("signup-button").addEventListener("click", function() {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      
       if (auth.currentUser.emailVerified == false){
         alert('Email Not Verified')
         return (false)
       }
-      window.location = "/main.html"
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          var Name = String(user.displayName)
+          if(Name == 'null'){
+            window.location = '/set-username.html'
+          }
+          else{
+            window.location = '/main.html'
+            }
+        }
+      });
     })
     .catch((error) => {
         document.getElementById('wrongpassword').innerHTML = 'Wrong Email ID or Password.'

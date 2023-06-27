@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -13,17 +13,16 @@ appId: "1:790443205869:web:020a252e60cc19ed3bd8e4"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
+
 auth.onAuthStateChanged(user =>{
     if(user){
-        
-    }
-    else{
-        window.location = "/login.html"
-    }
-})
+        var Name = auth.currentUser.displayName
+        if (Name == null){
+            window.location = '/set-username.html'
+        }}})
 
 document.getElementById("signout").addEventListener("click", function() {
-    auth.signOut().then(() =>{
+    signOut(auth).then(() => {
         window.location = '/login.html'
+      })
     })
-})

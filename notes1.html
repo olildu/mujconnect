@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0,height=device-height">
+        <title>Notes</title>
+        <link rel="stylesheet" href="css/notes1.css">
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="left-bar">
+            <h1 class="nav-left-text">MUJConnect</h1>
+            <div class="underline"></div>
+            <div class="rectangle"></div>
+            <div class="text-holder">
+                <div class="home-div" id="home-div">
+                    <img src="/images/home.png">
+                    <p class="home">Home</p>
+                </div>
+                <div class="notes-div">
+                    <img src="/images/sticky-note.png">
+                    <p class="notes">Notes</p>
+                </div>
+                <div class="chat-div" id="chat-div">
+                    <img src="/images/chat1.png">
+                    <p class="chat">Chat</p>
+                </div class="notes-div">  
+            </div>
+        </div>
+        <div id="new-note" class="new-note">
+            <p>Add new note</p>
+            <div class="cross">
+                <img src="/images/cross.png">
+            </div>
+        </div>
+    </body>
+    <script src="javascript/notes1.js" type="module"></script>

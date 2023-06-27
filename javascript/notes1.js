@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -16,25 +16,13 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    const read_data = ref(database, '/' + uid);
-  onValue(read_data, (snapshot) => {
-    const data = snapshot.val();
-    console.log(data)
-    document.getElementById('note1').innerHTML = data.notes
-  }); 
-  }
-});
 
-document.getElementById("clicker").addEventListener("click", function() {
-    var note = document.getElementById("take-notes").value
-    const uid = auth.currentUser.uid;
-
-    set(ref(database, '/'+uid), {
-      notes: note,
-      user_ondo : false
-      });
-    document.getElementById('take-notes').value = ''
+document.getElementById("home-div").addEventListener("click", function() {
+    window.location = '/main.html'
+})
+document.getElementById("chat-div").addEventListener("click", function() {
+    window.location = '/chat.html'
+})
+document.getElementById("new-note").addEventListener("click", function() {
+  window.location = '/notes .html'
 })
