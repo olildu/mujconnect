@@ -38,6 +38,7 @@ h1{
     background: transparent;
     color: white;
     border-bottom: 1px solid white;
+    width: 190px;
 }
 .loginbox input[type="text"]{
     position: relative;
@@ -60,6 +61,7 @@ h1{
     transition: 0.3s;
     background-color: rgb(161, 24, 24);
 }
+
 /* Reset Password HTML */
 .loginbox-1{
     width: 220;
@@ -85,6 +87,7 @@ h1{
     background: transparent;
     color: white;
     border-bottom: 1px solid white;
+    width: 190px;
 }
 .loginbox-1 input[type="text"]{
     position: relative;

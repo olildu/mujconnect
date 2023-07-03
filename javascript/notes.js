@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+import { getDatabase, ref, get, child, onValue, update} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -19,22 +19,46 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
-    const read_data = ref(database, '/' + uid);
-  onValue(read_data, (snapshot) => {
-    const data = snapshot.val();
-    console.log(data)
-    document.getElementById('note1').innerHTML = data.notes
-  }); 
+    const starCountRef = ref(database, '/' + '/notes/' + uid);
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      if(data == null){
+        update(ref(database, "/"+ '/notes/' + uid   ), {notes_number:0})
+        update(ref(database, "/"+ '/notes/' + uid ), {notes_number:0})
+
+      }
+
+      if (data.notes_number == undefined){
+        update(ref(database, "/"+  '/notes/' + uid ), {notes_number:0})
+        update(ref(database, "/"+ '/notes/' + uid ), {notes_number:0})
+
+      }
+      update(ref(database, "/"+  '/users/'+ uid  ), {notes_number:0})
+      
+    });
   }
 });
 
+
+
 document.getElementById("clicker").addEventListener("click", function() {
-    var note = document.getElementById("take-notes").value
     const uid = auth.currentUser.uid;
 
-    set(ref(database, '/'+uid), {
-      notes: note,
-      user_ondo : false
-      });
-    document.getElementById('take-notes').value = ''
+
+    const dbRef = ref(getDatabase());
+
+    get(child(dbRef, '/'+ '/notes/' + uid )).then((snapshot) => {
+      var note = document.getElementById("take-notes").value
+      var count = snapshot.val().notes_number + 1
+      console.log(count)
+      var notes = count
+      update(ref(database, "/"+ '/notes/' + uid), {[notes]:note})
+  
+    update(ref(database, "/"+ '/notes/' + uid), {notes_number:count})
+    var note = document.getElementById("take-notes").value = "" });
 })
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    document.getElementById('clicker').click()
+  }
+});

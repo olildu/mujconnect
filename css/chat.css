@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #eff5ef;
+    min-width: 900px;
+}
+.left-bar{  
+    width: 70px;
+    height: 100%;
+    background-color: black;
+    display: block;
+    position: fixed;
+    top: 0;
+}
+
+.left-bar p{
+    color: white;
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 25px;
+    position: relative;
+    left: 19%;
+    bottom: 30px;
+}
+.home-div{
+    position: relative;
+}
+.text-holder img{
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 35px;
+    height: 35px;
+}
+.text-holder{
+    position: relative;
+    margin-top: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.chats{
+    width: 23vh;
+    min-width: 280px;
+    height: 100vh;
+    background-color: #c9c9c9;        
+    position: relative;
+    left: 9vh;          
+    border-radius: 15px;   
+    font-weight: 10px;
+
+}
+.chats p{
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    color: black;
+}
+.message-functions{
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+
+}
+.message-functions textarea{
+    width: 950px;
+    min-width: 800px;
+    height: 35px;
+    bottom: 10px;
+    background-color: #e6f0ef;
+    border: none;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.219);
+    border-radius: 10px;
+    resize: none;
+}
+.message{
+    display: grid;
+    grid-template-columns: auto auto;
+}

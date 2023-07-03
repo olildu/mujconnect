@@ -2,14 +2,21 @@
     <head>
         <meta name="viewport" content="width=device-width, intial-scale=1.0,height=device-height">
         <title>Notes</title>
-        <link rel="stylesheet" href="css/notes1.css">
+        <link rel="stylesheet" href="css/chat.css">
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="message">
+            <div class="chats">
+                <p>My Chats</p>
+            </div>
+            <div class="message-functions">
+                <textarea>Send a message...</textarea>
+                <button>Send</button>
+            </div>
+        </div>
+
         <div class="left-bar">
             <div class="underline"></div>
             <div class="rectangle"></div>
@@ -24,18 +31,6 @@
                     <img src="/images/chat1.png">
                 </div class="notes-div">  
             </div>
-        </div>
-        <div id="new-note" class="new-note">
-            <p>Add new note</p>
-            <div class="cross">
-                <img src="/images/cross.png">
-            </div>
-        </div>
-        <div id="saved-notes-container" class="saved-notes-container">
-        </div>
-        <div class="waiter" id="waiter">
-            <p id="text">Loading</p>
-            <div class="spinner" id="spinner"></div>
-        </div>
+            
     </body>
     <script src="javascript/notes1.js" type="module"></script>
