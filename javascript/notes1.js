@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
-
+var re;
 
 document.getElementById("home-div").addEventListener("click", function() {
     window.location = '/main.html'
@@ -23,9 +23,7 @@ document.getElementById("home-div").addEventListener("click", function() {
 document.getElementById("chat-div").addEventListener("click", function() {
     window.location = '/chat.html'
 })
-document.getElementById("new-note").addEventListener("click", function() {
-  window.location = '/notes.html'
-})
+
 
 var ran = false
 onAuthStateChanged(auth, (user) => {
@@ -44,13 +42,14 @@ onAuthStateChanged(auth, (user) => {
         
         const notes = data[`${i}`]
 
-        x = x + `<div class='saved-notes' id='${i}'` + `"><img src='/images/t.png' class='trash' id='trash${i}'><p>`+ notes + "</p></div>";
+        x += `<div class='saved-notes' id='${i}'"><div class='circle'></div><img src='/images/t.png' class='trash' id='trash${i}'><img src='/images/pen.png' class='pen' id='pen${i}'><p id='p${i}'>${notes}</p></div>`;
       }
       document.getElementById("saved-notes-container").innerHTML = x;
 
       var elements = document.querySelectorAll('.trash');
 
       remove_notes()
+      test()
 
       function remove_notes() {
       elements.forEach(function(element) {
@@ -103,4 +102,138 @@ function runOnce(){
     setTimeout(document.getElementById('waiter').remove(),700)
     ran = true
   }
+}
+
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    const starCountRef = ref(database, '/' + '/notes/' + uid);
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      if(data == null){
+        update(ref(database, "/"+ '/notes/' + uid   ), {notes_number:0})
+        update(ref(database, "/"+ '/notes/' + uid ), {notes_number:0})
+
+      }
+
+      if (data.notes_number == undefined){
+        update(ref(database, "/"+  '/notes/' + uid ), {notes_number:0})
+        update(ref(database, "/"+ '/notes/' + uid ), {notes_number:0})
+
+      }
+      update(ref(database, "/"+  '/users/'+ uid  ), {notes_number:0})
+      
+    });
+  }
+});
+
+
+
+document.getElementById("take-note").addEventListener("click", function(event) {
+  var element = document.getElementById('take-note')
+  element.style.animation = "movein 0.5s ease-in-out forwards";
+  
+  var max_window = document.getElementById('outer')
+  max_window.style.width = '100%';
+  max_window.style.height = '100%';
+})
+
+document.getElementById("outer").addEventListener("click", function(event) {
+  var element = document.getElementById('take-note')
+  var max_window = document.getElementById('outer')
+
+  max_window.style.width = '0%';
+  max_window.style.height = '0%';
+
+  var element1 = document.getElementById('take-note')
+
+  const uid = auth.currentUser.uid;
+
+
+  const dbRef = ref(getDatabase());
+
+  get(child(dbRef, '/'+ '/notes/' + uid )).then((snapshot) => {
+    var note = document.getElementById("take-note").value
+    if (note == ''){
+      return false
+    }
+
+    var count = snapshot.val().notes_number + 1
+    var notes = count
+    update(ref(database, "/"+ '/notes/' + uid), {[notes]:note})
+
+  update(ref(database, "/"+ '/notes/' + uid), {notes_number:count})
+  var note = document.getElementById("take-note").value = "" });
+
+  element1.style.animation = "moveout 0.4s ease-in forwards";
+
+
+})
+
+function test() {
+  var children = document.querySelectorAll('.pen');
+  children.forEach(function(element) {
+    element.addEventListener('click', function() {
+      re = document.getElementById(element.id).parentNode.id;
+      var k = document.getElementById('p' + re).textContent;
+
+      var coverer = document.getElementById('coverem');
+      coverer.style = '';
+      coverer.style.animation = 'fadein 0.3s ease-in forwards';
+      coverer.style.display = 'block';
+
+      var divElement = document.createElement("textarea");
+      divElement.id = 'new-created';
+      divElement.innerText = k;
+
+      var divElement1 = document.createElement("div");
+      divElement1.id = 'edit-notes-container';
+
+      document.getElementById('coverem').append(divElement1);
+      document.getElementById('edit-notes-container').append(divElement);
+
+      divElement.focus();
+
+      setTimeout(function() {
+        click_listener();
+      }, 500); 
+    });
+  });
+}
+
+function click_listener() {
+  var newNotesElement = document.getElementById("new-created");
+  
+  newNotesElement.addEventListener("focusout", function() {
+    var uid = auth.currentUser.uid;
+    var new_notes = newNotesElement.value;
+
+    if (new_notes == ''){
+      return false
+    }
+
+    document.addEventListener("click", function(event) {
+      var desiredElementId = "new-created";
+      var clickedElementId = event.target.id;
+    
+      if (clickedElementId !== desiredElementId) {
+        console.log('clickoutside')
+      }
+    });
+    update(ref(database, "/" + '/notes/' + uid), { [re]: new_notes });
+
+    var coverem = document.getElementById("coverem");
+    coverem.style.animation = "fadeout 0.3s ease-in forwards";
+
+    var editNotesContainer = document.getElementById("edit-notes-container");
+    if (editNotesContainer) {
+      editNotesContainer.remove();
+    }
+    document.getElementById("coverem").style.display = "none";
+
+    setTimeout(function() {
+      document.getElementById("coverem").style = "";
+    }, 1000);
+  });
 }

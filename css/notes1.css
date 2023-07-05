@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap');
 body{
     margin: 0;
     padding: 0;
@@ -48,33 +49,31 @@ body{
 
 .new-note{
     width: 250px;
-    height: 80px;
+    height: 50px;
     background-color: #D9D9D9;
     position: absolute;
     transform: translate(0%,30%);
-    left: 44%;
+    left: 43%;
     border-radius: 11px;
-    transition: all 0.7s ease;
+    font-size: 25px;
+    font-family: 'Inria Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.329);
+    padding: 25px 20px 10px 20px;
+    
 }
 .new-note:hover{
     background-color: #c9c9c9;
 }
-
-.new-note p{
-    font-family: 'Inria Sans', sans-serif;
-    font-weight: 60px;
-    font-size: 25;
-    position: relative;
-    left: 20px;
-    opacity: 0.5;
+.cross{
+    height: 0px;
 }
+
 .new-note img{
-    width: 47px;
-    height: 47px;
-    transform: rotate(45deg);
+    width: 55px;
+    height: 55px;
     position: relative;
-    left: 180px;
-    bottom: 64px;
+    left: 194px;
+    bottom: 42px;
     opacity: 0.8;
 }
 .home-div{
@@ -103,9 +102,11 @@ body{
     display: grid;
     grid-template-columns: auto auto auto auto;
     position: absolute; 
-    top: 150px;
-    left: 35vh;
+    margin-left: 15%;
     grid-gap: 40px;
+    position: absolute;
+    top: 21%;
+    left: 0%;
 }
 .saved-notes {
     background-color: rgba(255, 255, 255, 0.8);
@@ -127,21 +128,31 @@ body{
     text-align: left;
     position: relative;
     text-overflow: ellipsis;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     overflow: hidden;
     word-wrap: break-word;
     --max-lines: 6  ;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--max-lines);
-    bottom: 25px;
+    bottom: 55px;
 }
+.circle {
+    width: 5px;
+    height: 5px;
+    background-color: rgb(205, 51, 51);
+    border-radius: 50%;
+    position: relative;
+    top: 30px;
+    left: 8px;
+    
+  }
 .trash{
     width: 25px;
     height: 25px;
     position: relative;
-    top: 215px;
+    top: 205px;
     left: 100px;
     opacity: 0;
     transition: all 0.2s ease-in;
@@ -170,13 +181,7 @@ body{
     border-radius: 50%;
     animation: spin 1.3s ease infinite;
   }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+
   .changed-spinner{
     height: 120px;
     width: 120px;
@@ -203,9 +208,190 @@ body{
 #notes1{
     animation: fadeout 1.5s ease;
 }
-.cross{
+#take-note{
+    width: 500px;
+    height: 45px;
+    border: 1px solid black;
     position: absolute;
-    width: 0px;
+    border-radius: 8px;
+    top: 50px;
+    resize: none;
+    padding: 15px 10px 10px 10px;
+    transition: height 0.3s ease-in-out;
+    font-family: Arial,sans-serif;
+    letter-spacing: .01428571em;;
+    font-size: .875rem;
+}
+#take-notes-container{
+    position: absolute;
+    top: 50px;
+    left: 35%;
+    transform: translate(-50%, -50%); 
+    margin-left: 1%;
+    margin-right: 33%;    
+} 
+body::-webkit-scrollbar{
+    display: none;
+}
+.new-note{
+    width: 250px;
+    height: 50px;
+    background-color: #D9D9D9;
+    position: absolute;
+    transform: translate(0%,30%);
+    left: 43%;
+    border-radius: 11px;
+    font-size: 25px;
+    font-family: 'Inria Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.329);
+    padding: 25px 20px 10px 20px;
+    
+}
+.saved-notes-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    position: absolute; 
+    margin-left: 15%;
+    grid-gap: 40px;
+    position: absolute;
+    top: 21%;
+    left: 0%;
+}
+
+.saved-notes p{
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 23px;
+    text-align: left;
+    position: relative;
+    text-overflow: ellipsis;
+    padding-left: 23px;
+    padding-right: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+    --max-lines: 6    ;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+    bottom: 55px;
+    margin-bottom: 0px;
+}
+.saved-notes img{
+    top: 200px;
+}
+.trash{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 205px;
+    left: 120px;
+    opacity: 0;
+    padding: 10px 10px 10px 10px;
+    transition: all 0.2s ease-in;
+}
+.saved-notes:hover .trash{
+    opacity: 0.9;
+}
+.pen{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 205px;
+    left: 35px;
+    opacity: 0;
+    padding: 10px 10px 10px 10px;
+    transition: all 0.2s ease-in;
+}
+
+.saved-notes:hover .pen{
+    opacity: 1;
+}
+
+.saved-notes{
+    animation: fadein 1.5s ease ;
+}
+#notes1{
+    animation: fadeout 1.5s ease;
+}
+
+#take-notes-container{
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    transform: translate(-50%, -50%); 
+    margin-left: 1%;
+    margin-right: 33%;
+
+} 
+.saved-notes.centered {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: scale(1.1);
+    position: absolute;
+  }
+#coverem{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(91, 91, 91, 0.5);
+    backdrop-filter: blur(1px); 
+    display: none;  
+}
+#new-created{
+    width: 500px;
+    height: 250px;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    animation: fadein 0.6s ease-in-out;
+    border-radius: 9px;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 27px;
+    position: relative;
+    text-overflow: ellipsis;
+    resize: none;
+}
+#new-created:focus {
+    box-shadow: 1px 2px 8px rgb(105, 105, 105);
+    outline: none;
+}
+
+
+#edit-notes-container{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+@keyframes movein{
+    from {
+    }
+    to{
+    height: 100px;
+    }
+}
+@keyframes moveout{
+    from {
+    height: 100px;
+    }
+
 }
 @keyframes fadein {
     from { opacity: 0; }
@@ -216,21 +402,56 @@ body{
     to   { opacity: 1; }
 }
 
-@media screen and (max-width: 1366px ){
+@media screen and (max-width: 1430px ){
     .saved-notes-container{
-        left: 24vh;
         grid-template-columns: auto auto auto auto  ;
         }
     .new-note{
         left: 43%;
     }
+    #take-note{
+        width: 500px;
+    }
 }
 @media screen and (max-width: 1280px ){
     .saved-notes-container{
-        left: 18vh;
+         margin-left: 10%;
+
+        grid-template-columns: auto auto auto auto  ;
+        }
+
+    #take-note{
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1366px ){
+    .saved-notes-container{
+        margin-left: 15%;
         grid-template-columns: auto auto auto auto  ;
         }
     .new-note{
         left: 45%;
+    }
+    #take-note{
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1248px ){
+    .saved-notes-container{
+         margin-left: 20%;
+        
+        grid-template-columns: auto auto auto;
+        }
+
+}
+@media screen and (max-width: 1100px ){
+    .saved-notes-container{
+        grid-template-columns: auto auto auto;
+        }
+    .new-note{
+        left: 45%;
+    }
+    #take-note{
+        width: 450px;
     }
 }

@@ -57,6 +57,7 @@ document.getElementById("clicker").addEventListener("click", function() {
     update(ref(database, "/"+ '/notes/' + uid), {notes_number:count})
     var note = document.getElementById("take-notes").value = "" });
 })
+
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     document.getElementById('clicker').click()
