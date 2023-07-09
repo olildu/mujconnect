@@ -1,45 +1,18 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, intial-scale=1.0,height=device-height">
+        <meta name="viewport" content="width=device-width,height=device-height">
         <title>Notes</title>
-        <link rel="stylesheet" href="css/notes1.css">
+        <link rel="stylesheet" href="css/notes.css">
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="left-bar">
-            <div class="underline"></div>
-            <div class="rectangle"></div>
-            <div class="text-holder">
-                <div class="home-div" id="home-div">
-                    <img src="/images/home.png">
-                </div>
-                <div class="notes-div">
-                    <img src="/images/sticky-note.png">
-                </div>
-                <div class="chat-div" id="chat-div">
-                    <img src="/images/chat1.png">
-                </div class="notes-div">  
-            </div>
+        <div class="nav-header">
+            <h1>Welcome to MUJ Connect</h1>
+            <button id="clicker" class="clicker"><img src="/images/check1.png" class="submitpng" border="0" /></button>
         </div>
-        
-        <div id="outer"></div>
-        
-        <div id="coverem"></div>
+        <textarea id="take-notes" class="take-notes" placeholder="Take a note..."></textarea>
 
-        <div id="take-notes-container">
-            <textarea id='take-note' class="take-note" placeholder="Take a note..."></textarea>
-        </div>
-
-        <div id="saved-notes-container" class="saved-notes-container"></div>
-        
-        <div class="waiter" id="waiter">
-            <p id="text">Loading</p>
-            <div class="spinner" id="spinner"></div>
-        </div>
 
     </body>
-    <script src="javascript/notes1.js" type="module"></script>
+    <script src="javascript/notes.js" type="module"></script>

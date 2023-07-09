@@ -63,3 +63,9 @@ document.addEventListener('keydown', function(event) {
     document.getElementById('clicker').click()
   }
 });
+
+auth.onAuthStateChanged(user =>{
+  if (user == null){
+      window.location = '/login.html'
+  }
+})

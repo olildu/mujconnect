@@ -13,6 +13,13 @@ body{
     position: fixed;
     top: 0;
 }
+textarea ::-webkit-scrollbar{
+    width: 0.25rem;
+}
+textarea ::-webkit-scrollbar-track{
+    background-color: violet;
+}
+
 .nav-left-text{
     color: white;
     font-size: 25px;
@@ -98,16 +105,7 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.saved-notes-container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    position: absolute; 
-    margin-left: 15%;
-    grid-gap: 40px;
-    position: absolute;
-    top: 21%;
-    left: 0%;
-}
+
 .saved-notes {
     background-color: rgba(255, 255, 255, 0.8);
     width: 250px;
@@ -254,7 +252,7 @@ body::-webkit-scrollbar{
     margin-left: 15%;
     grid-gap: 40px;
     position: absolute;
-    top: 21%;
+    top: 25%;
     left: 0%;
 }
 

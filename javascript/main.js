@@ -15,11 +15,11 @@ const auth = getAuth();
 
 
 auth.onAuthStateChanged(user =>{
-    if(user){
-        var Name = auth.currentUser.displayName
-        if (Name == null){
-            window.location = '/set-username.html'
-        }}})
+    if (user == null){
+        window.location = '/login.html'
+    }
+})
+
 
 document.getElementById("signout").addEventListener("click", function() {
     signOut(auth).then(() => {

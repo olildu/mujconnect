@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, intial-scale=1.0,height=device-height">
+        <title>Pomodoro</title>
+        <link rel="stylesheet" href="css/pomodoro.css">
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="three-lines-container" onclick="extend_navbar()" >
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+        </div>
+
+        <div class="left-bar" id="nav-bar">
+            <div class="underline"></div>
+            <div class="rectangle"></div>
+            <div class="text-holder" id="text-holder">
+                <div class="home-div" id="home-div">
+                    <img src="/images/home.png">
+                </div>
+                <div class="notes-div">
+                    <img src="/images/sticky-note.png">
+                </div>
+                <div class="chat-div" id="chat-div">
+                    <img src="/images/chat1.png">
+                </div class="notes-div">  
+            </div>
+        </div>
+
+        <div id="outer1"></div>
+
+        <div class="timer-wrapper">
+            <div class="timer-container">
+                <h1 id="timer">25:00</h1>
+                <button onclick="run_check()" id="start-stop">Start</button>
+                <img src="/images/reload.png" id="reset" onclick="reset()"></img>
+                <img src="/images/gear.png" id="gear" onclick="dropdown()"></img>
+            </div>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <p class="timer">Timers</p>
+            <p class="pomodoro">Pomodoro</p>
+            <input class="minutes" id="minutes" min="1">
+            <p class="showminutes">minutes</p>
+        </div>
+
+        <div id="blur" onclick="outside()"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- <div class="waiter" id="waiter">
+            <p id="text">Loading</p>
+            <div class="spinner" id="spinner"></div>
+        </div> -->
+
+    </body>
+    <script src="javascript/pomodoro.js"></script>

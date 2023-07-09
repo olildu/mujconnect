@@ -24,6 +24,11 @@ document.getElementById("chat-div").addEventListener("click", function() {
     window.location = '/chat.html'
 })
 
+auth.onAuthStateChanged(user =>{
+  if (user == null){
+      window.location = '/login.html'
+  }
+})
 
 var ran = false
 onAuthStateChanged(auth, (user) => {
