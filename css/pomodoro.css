@@ -99,7 +99,7 @@ body{
 .timer-container h1{
     color: white;
     position: absolute;
-    font-size: 7rem;
+    font-size: 8rem;
     font-family: 'Inria Sans', sans-serif;
     font-weight: 100px;
     top: 13%;
@@ -114,7 +114,7 @@ body{
     border-radius: 500px;
     outline: none;
     border: 1px solid white;
-    top: 70%;
+    top: 80%;
     left: 35%;
     transform: translate(-50%,-50%);
     cursor: pointer;
@@ -133,7 +133,7 @@ body{
     border: none;
     position: absolute;
     outline: none;
-    top: 70%;
+    top: 80%;
     left: 54%;
     cursor: pointer;
     transform: translate(-50%,-50%);    
@@ -144,7 +144,7 @@ body{
     border: none;
     position: absolute;
     outline: none;
-    top: 70%;
+    top: 80%;
     left: 68%;
     transform: translate(-50%,-50%);
     cursor: pointer;
@@ -245,8 +245,17 @@ body{
     height: 0%;
     z-index: 1;
 }
+#spotify-player{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    opacity: 0.5;
+    transition: all 0.6s;
+}
 
-
+#spotify-player:hover{
+    opacity: 1;
+}
 
 
 

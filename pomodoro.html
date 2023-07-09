@@ -38,7 +38,7 @@
         <div class="timer-wrapper">
             <div class="timer-container">
                 <h1 id="timer">25:00</h1>
-                <button onclick="run_check()" id="start-stop">Start</button>
+                <button onclick="run_check()" id="start-stop">start</button>
                 <img src="/images/reload.png" id="reset" onclick="reset()"></img>
                 <img src="/images/gear.png" id="gear" onclick="dropdown()"></img>
             </div>
@@ -49,6 +49,10 @@
             <input class="minutes" id="minutes" min="1">
             <p class="showminutes">minutes</p>
         </div>
+        <div id="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" width="120%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
 
         <div id="blur" onclick="outside()"></div>
 

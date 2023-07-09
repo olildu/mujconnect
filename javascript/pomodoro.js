@@ -38,11 +38,11 @@ function run_check() {
     }
     var status = document.getElementById('start-stop').textContent
     console.log(document.getElementById('start-stop').textContent)
-    if(document.getElementById('start-stop').textContent == 'Start'){
-        document.getElementById('start-stop').textContent = 'Stop'
+    if(document.getElementById('start-stop').textContent == 'start'){
+        document.getElementById('start-stop').textContent = 'stop'
     }
     else{
-        document.getElementById('start-stop').textContent = 'Start'
+        document.getElementById('start-stop').textContent = 'start'
     }
 }
 
