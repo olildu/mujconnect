@@ -83,12 +83,8 @@ function outside(){
     element1.style.display = 'none'
     mins = parseInt(minutes.value)
     minutes.value = ''
-    
-    console.log(mins)
-
 
     if (Number.isNaN(mins)){
-        console.log('None') 
         seconds = prev_min
         document.getElementById('timer').textContent = `${prev_min/60}:00`;
 
@@ -149,5 +145,61 @@ spotify_player.addEventListener('mouseover', () => {
 });
 
 spotify_player.addEventListener('mouseout', () => {
-    spotify_player.style.opacity = '0.5'
+    spotify_player.style.opacity = '0.7'
 });
+
+
+function timer_f(){
+    var general_children =  document.getElementById('general_class_children')
+    var timer_children = document.getElementById('timer_class_children')
+    var line = document.getElementById('line')
+
+    general_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(dissaper,300)
+    
+    timer_children.style.animation = 'fadein 0.2s ease-in forwards';
+    timer_children.style.display = 'block'
+    line.style.opacity = '0'
+    line.style.top = '130px'
+    line.style.opacity = '1'
+    line.style.widows = '55px'
+}
+
+function timer_f(){
+    var general_children =  document.getElementById('general_class_children')
+    var timer_children = document.getElementById('timer_class_children')
+    var line = document.getElementById('line')
+
+    general_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        general_children.style.display = 'none'
+    },300)
+    
+    timer_children.style.animation = 'fadein 0.2s ease-in forwards';
+    timer_children.style.display = 'block'
+    line.style.opacity = '0'
+    line.style.top = '130px'
+    line.style.opacity = '1'
+    line.style.width = '55px'
+}
+
+function general_f(){
+    var general_children =  document.getElementById('general_class_children')
+    var timer_children = document.getElementById('timer_class_children')
+    var line = document.getElementById('line')
+
+    timer_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        timer_children.style.display = 'none'
+    },300)
+    
+    general_children.style.animation = 'fadein 0.2s ease-in forwards';
+    general_children.style.display = 'block'
+    line.style.opacity = '0'
+    line.style.top = '87px'
+    line.style.opacity = '1'
+    line.style.width = '62px'
+}

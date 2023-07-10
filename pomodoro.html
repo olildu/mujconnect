@@ -44,10 +44,30 @@
             </div>
         </div>
         <div class="dropdown" id="dropdown">
-            <p class="timer">Timers</p>
-            <p class="pomodoro">Pomodoro</p>
-            <input class="minutes" id="minutes" min="1" autocomplete="off" >
-            <p class="showminutes">minutes</p>
+            <div class="line" id="line"></div>
+            <div class="general_class">
+                <p class="general" onclick="general_f()">General</p>
+                <div id="general_class_children">
+                    <p class="theme">Select Theme:</p>
+                    <select class="select-theme">
+                        <option value="Dark Mountains">Dark Mountains</option>
+                        <option value="Dreamy Clouds">Dreamy Clouds</option>
+                        <option value="Aesthetic City">Aesthetic City</option>
+                        <option value="Moody Taj Mahal">Moody Taj Mahal</option>
+                    </select>
+                    <p class="note">Have feature requests, or did you find an issue to report?<br> If so please send an <a href="mailto:ebin67891234@gmail.com">email</a>.<br><br> Thank you for your patience.</p>
+                </div>
+            </div>   
+            <div class="timer_class">
+                <p class="timer" id="timer" onclick="timer_f()">Timers</p>
+                    <div id="timer_class_children">
+                    <p class="pomodoro">Pomodoro</p>
+                    <input class="minutes" id="minutes" min="1" autocomplete="off" >
+                    <p class="showminutes">minutes</p>
+                    <p class="note">Use this space to change time according to your needs.<br>Please note that to keep time in the format of whole<br> numbers and not a floating value. Thank you :)</p>
+            
+                </div>
+            </div>
         </div>
         <div id="spotify-player">
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" width="120%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

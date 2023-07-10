@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url("/images/1.jpg");
+    background-image: url("/images/2.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -20,12 +20,31 @@ body{
     z-index: 2;
     transition: all 0.5s;
 }
-
+.home-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.home-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}.chat-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.chat-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.notes-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.notes-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
 .text-holder img{
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
     width: 35px;
     height: 35px;
     display: block;
@@ -167,16 +186,17 @@ body{
     font-size: 20px;
     position: absolute;
     left: 30px;
-    top: 60px;
+    top: 85px;
     font-family: 'Inria Sans', sans-serif;
+    cursor: pointer;
 
 }
 .pomodoro{
     color: white;
     font-size: 19px;
     position: absolute;
-    left: 149px;
-    top: 34px;
+    left: 170px;
+    top: 40px;
     font-family: 'Inria Sans', sans-serif;
 
 }
@@ -188,8 +208,8 @@ body{
     width: 80px;
     font-size: 20px;
     position: absolute;
-    left: 150px;
-    top: 80px;
+    left: 170px;
+    top: 90px;
     font-family: 'Inria Sans', sans-serif;
 
 }
@@ -198,8 +218,58 @@ body{
     font-size: 0.875rem;
     font-family: sans-serif;
     position: absolute;
-    left: 150px;
-    top: 100px;
+    left: 171px;
+    top: 110px;
+}
+.note{
+    color: rgba(255, 255, 255, 0.675);
+    font-family: 'Inria Sans', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    position: absolute;
+    top: 180px;
+    left: 170px;
+}
+.general{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    font-family: 'Inria Sans', sans-serif;
+    cursor: pointer;
+}
+#timer_class_children{
+    display: none;
+}
+.theme{
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    left: 170px;
+    top: 30px;
+    font-family: 'Inria Sans', sans-serif;
+}
+.select-theme{
+    background-color: black;
+    color: white;
+    outline: none;
+    width: 350px;
+    border-radius: 2px;
+    font-size: 16px;
+    position: absolute;
+    left: 170px;
+    top: 80px;
+    font-family: 'Inria Sans', sans-serif;
+}
+.line{
+    width: 62px;
+    height: 1.5px;
+    background-color: white;
+    position: absolute;
+    left: 32px;
+    top: 87px;
+    transition: all 0.2s;
 }
 #blur{
     background-color: rgba(0, 0, 0, 0.382);
@@ -249,7 +319,7 @@ body{
     position: absolute;
     bottom: 50px;
     left: 50px;
-    opacity: 0.5;
+    opacity: 0.7;
     transition: all 0.6s;
 }
 
@@ -288,15 +358,13 @@ body{
 }
 @keyframes fadein {
     from { 
-        /* top: 35%; */
         opacity: 0; 
     }
     to   { 
-        /* top: 37%; */
         opacity: 1; 
     }
 }
 @keyframes fadeout{
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
