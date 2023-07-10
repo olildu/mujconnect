@@ -1,51 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400&display=swap');
-.dropdown{
-    width: 600px;
-    height: 345px;
+.tip{
+    width: 15px;
+    height: 15px;
+    background-color: rgb(54, 53, 53);
+    transform: rotate(45deg);
     position: absolute;
-    top: 30%;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%,-50%);
-    background-color: black;
-    border-radius: 15px;
-}
-.timer{
-    color: white;
-    font-size: 20px;
+    top: 15px;
+  }
+  .box{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(54, 53, 53);
     position: absolute;
-    left: 30px;
-    top: 60px;
-    font-family: 'Inria Sans', sans-serif;
-
-}
-.pomodoro{
-    color: white;
-    font-size: 19px;
-    position: absolute;
-    left: 149px;
-    top: 34px;
-    font-family: 'Inria Sans', sans-serif;
-
-}
-#minutes{
-    background-color: black;
-    border: 1px solid white;
-    border-radius: 0.25rem;
-    color: white;
-    width: 80px;
-    font-size: 20px;
-    position: absolute;
-    left: 150px;
-    top: 80px;
-    font-family: 'Inria Sans', sans-serif;
-
-}
-.showminutes{
-    color: rgba(255, 255, 255, 0.841);
-    font-size: 0.875rem;
-    font-family: sans-serif;
-    position: absolute;
-    left: 150px;
-    top: 100px;
-}
+    left: 11px;
+    border-radius: 8px;
+  }

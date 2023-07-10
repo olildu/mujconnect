@@ -17,17 +17,18 @@
             <div class="line-3"></div>
         </div>
 
+
         <div class="left-bar" id="nav-bar">
             <div class="underline"></div>
             <div class="rectangle"></div>
             <div class="text-holder" id="text-holder">
-                <div class="home-div" id="home-div">
+                <div class="home-div" id="home-div" title="Home">
                     <img src="/images/home.png">
                 </div>
-                <div class="notes-div">
+                <div class="notes-div" title="Notes">
                     <img src="/images/sticky-note.png">
                 </div>
-                <div class="chat-div" id="chat-div">
+                <div class="chat-div" id="chat-div" title="Chats">
                     <img src="/images/chat1.png">
                 </div class="notes-div">  
             </div>
@@ -49,11 +50,11 @@
                 <p class="general" onclick="general_f()">General</p>
                 <div id="general_class_children">
                     <p class="theme">Select Theme:</p>
-                    <select class="select-theme">
-                        <option value="Dark Mountains">Dark Mountains</option>
-                        <option value="Dreamy Clouds">Dreamy Clouds</option>
-                        <option value="Aesthetic City">Aesthetic City</option>
-                        <option value="Moody Taj Mahal">Moody Taj Mahal</option>
+                    <select class="select-theme" id="select-theme">
+                        <option value="1">Aesthetic City</option>
+                        <option value="2">Dark Mountains</option>
+                        <option value="3">Dreamy Clouds</option>
+                        <option value="4">Moody Taj Mahal</option>
                     </select>
                     <p class="note">Have feature requests, or did you find an issue to report?<br> If so please send an <a href="mailto:ebin67891234@gmail.com">email</a>.<br><br> Thank you for your patience.</p>
                 </div>
@@ -68,6 +69,8 @@
             
                 </div>
             </div>
+            <button onclick="outside()" class="save-changes">Save Changes</button>
+            <button class="close">Close</button>
         </div>
         <div id="spotify-player">
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" width="120%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

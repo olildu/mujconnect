@@ -10,10 +10,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="left-bar">
+        <div class="three-lines-container" onclick="extend_navbar()" >
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+        </div>
+
+        <div class="left-bar" id="nav-bar">
             <div class="underline"></div>
             <div class="rectangle"></div>
-            <div class="text-holder">
+            <div class="text-holder" id="text-holder">
                 <div class="home-div" id="home-div">
                     <img src="/images/home.png">
                 </div>
@@ -26,6 +32,7 @@
             </div>
         </div>
         
+        <div id="outer1"></div>
         <div id="outer"></div>
         
         <div id="coverem"></div>
@@ -43,3 +50,4 @@
 
     </body>
     <script src="javascript/notes1.js" type="module"></script>
+    <script src="javascript/test.js" ></script>

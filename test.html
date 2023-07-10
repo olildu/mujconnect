@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/test.css">
 
-  <style>
-
-  </style>
 </head>
 <body>
-    <div class="dropdown">
-        <p class="timer">Timers</p>
-        <p class="pomodoro">Pomodoro</p>
-        <input class="minutes" id="minutes" min="1">
-        <p class="showminutes">minutes</p>
-    </div>
+  <h1>Hover over the element for 2 seconds</h1>
+  <p title='Balls'>Open the browser console to see the output.</p>
+
+  <div onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">Hover over me</div>
 </body>
 </html>

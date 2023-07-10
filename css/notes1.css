@@ -6,52 +6,55 @@ body{
     background-color: #eff5ef;
 }
 .left-bar{  
-    width: 70px;
+    width: 0px;
     height: 100%;
     background-color: black;
     display: block;
     position: fixed;
     top: 0;
+    z-index: 2;
+    transition: all 0.5s;
 }
-textarea ::-webkit-scrollbar{
-    width: 0.25rem;
+.home-div{
+    border-radius: 10px;
+    transition: all 0.5s;
 }
-textarea ::-webkit-scrollbar-track{
-    background-color: violet;
+.home-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}.chat-div{
+    border-radius: 10px;
+    transition: all 0.5s;
 }
-
-.nav-left-text{
-    color: white;
-    font-size: 25px;
-    font-family: 'Inria Sans', sans-serif;
-    font-weight: 2;
+.chat-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.notes-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.notes-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.text-holder img{
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+}
+.text-holder{
     position: relative;
-    left: 12vh;
-    top: 5vh;
-    vertical-align: middle;
-}
-.underline{
-    height: 10px;
-    width: 339px;
-    color: white;
-}
-.left-bar p{
-    color: white;
-    font-family: 'Inria Sans', sans-serif;
-    font-size: 25px;
-    position: relative;
-    left: 19%;
-    bottom: 30px;
-}
-
-.home-div img{
-    position: relative;
-}
-.notes-div img{
-    position: relative;
-}
-.chat-div img{
-    position: relative;
+    margin-top: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
 }
 
 .new-note{
@@ -85,14 +88,6 @@ textarea ::-webkit-scrollbar-track{
 }
 .home-div{
     position: relative;
-}
-.text-holder img{
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    width: 35px;
-    height: 35px;
 }
 .text-holder{
     position: relative;
@@ -219,41 +214,23 @@ textarea ::-webkit-scrollbar-track{
     font-family: Arial,sans-serif;
     letter-spacing: .01428571em;;
     font-size: .875rem;
+    left: 50%;
+    transform: translate(-50%,0%);
 }
-#take-notes-container{
-    position: absolute;
-    top: 50px;
-    left: 35%;
-    transform: translate(-50%, -50%); 
-    margin-left: 1%;
-    margin-right: 33%;    
-} 
+
 body::-webkit-scrollbar{
     display: none;
 }
-.new-note{
-    width: 250px;
-    height: 50px;
-    background-color: #D9D9D9;
-    position: absolute;
-    transform: translate(0%,30%);
-    left: 43%;
-    border-radius: 11px;
-    font-size: 25px;
-    font-family: 'Inria Sans', sans-serif;
-    color: rgba(0, 0, 0, 0.329);
-    padding: 25px 20px 10px 20px;
-    
-}
+
 .saved-notes-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
     position: absolute; 
-    margin-left: 15%;
     grid-gap: 40px;
     position: absolute;
     top: 25%;
-    left: 0%;
+    left: 15%;
+    padding: 0 0 100px 0;
 }
 
 .saved-notes p{
@@ -314,11 +291,8 @@ body::-webkit-scrollbar{
 #take-notes-container{
     position: absolute;
     top: 0%;
-    left: 35%;
+    left: 50%;
     transform: translate(-50%, -50%); 
-    margin-left: 1%;
-    margin-right: 33%;
-
 } 
 .saved-notes.centered {
     grid-column: 1 / -1;
@@ -370,7 +344,41 @@ body::-webkit-scrollbar{
     top: 55%;
     transform: translate(-50%, -50%);
 }
+.three-lines-container{
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.line-1{
+    width: 35px;
+    height: 2px;
+    background-color: black;
+}
 
+.line-2{
+    width: 35px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 7px;
+}
+
+.line-3{
+    width: 35px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 14px;
+}
+#outer1{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    z-index: 1;
+}
 
 @keyframes spin {
     to {
@@ -413,8 +421,6 @@ body::-webkit-scrollbar{
 }
 @media screen and (max-width: 1280px ){
     .saved-notes-container{
-         margin-left: 10%;
-
         grid-template-columns: auto auto auto auto  ;
         }
 
@@ -424,7 +430,6 @@ body::-webkit-scrollbar{
 }
 @media screen and (max-width: 1366px ){
     .saved-notes-container{
-        margin-left: 15%;
         grid-template-columns: auto auto auto auto  ;
         }
     .new-note{
@@ -436,8 +441,6 @@ body::-webkit-scrollbar{
 }
 @media screen and (max-width: 1248px ){
     .saved-notes-container{
-         margin-left: 20%;
-        
         grid-template-columns: auto auto auto;
         }
 

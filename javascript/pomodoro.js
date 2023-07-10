@@ -6,6 +6,9 @@ var outer = document.getElementById('blur')
 const ring = new Audio('/audio/ring.mp3')
 var mins = 25
 var prev_min = 1500
+var text_holder1 = document.getElementById('text-holder')
+
+
 function formatTime(time) {
     return (time < 10 ? "0" : "") + time;
 }
@@ -78,9 +81,20 @@ function dropdown(){
 
 function outside(){
     var minutes = document.getElementById('minutes')
+    var theme = document.getElementById('select-theme').value
+    var background = document.body
 
+
+    element1.style.animation = 'fadeout 0.4s ease-out forwards';
+    outer.style.animation = 'fadeout 0.4s ease-out forwards';
+
+    setTimeout(function(){
     outer.style.display = 'none'
     element1.style.display = 'none'
+    },500)
+
+    background.style.backgroundImage = `url('/images/${theme}.jpg')`
+
     mins = parseInt(minutes.value)
     minutes.value = ''
 
@@ -93,15 +107,11 @@ function outside(){
         document.getElementById('timer').textContent = `${mins}:00`;
         seconds = mins*60
         prev_min = mins*60
-        console.log(seconds)
-
     }
     if (String(mins).length == 1){
         document.getElementById('timer').textContent = `0${mins}:00`;
         seconds = mins*60
         prev_min = mins*60
-        console.log(seconds)
-
     }
 
 
@@ -128,9 +138,7 @@ document.getElementById("outer1").addEventListener("click", function() {
     var outer1 = document.getElementById('outer1')
     var spotify_player = document.getElementById('spotify-player')
 
-    console.log('Navbar collapsed');
-
-    spotify_player.style.opacity = '0.5'
+    spotify_player.style.opacity = '0.7'
     outer1.style.width = '0vh';
     outer1.style.height = '0vh';
     text_holder.style.left = '-20px';
