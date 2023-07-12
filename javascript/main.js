@@ -15,7 +15,6 @@ const auth = getAuth();
 
 
 auth.onAuthStateChanged(user =>{
-    console.log(user.photoURL)
     if (user == null){
         window.location = '/login.html'
     }
@@ -25,3 +24,28 @@ auth.onAuthStateChanged(user =>{
     }
 })
 
+
+document.getElementById("profile-pic").addEventListener("click", function() {
+    var profile_overlay = document.getElementById('profile-overlay')
+    var outer1 = document.getElementById('outer1')
+
+    profile_overlay.style.display = 'block'
+    profile_overlay.style.animation = 'fadein 0.5s ease-out forwards';
+    outer1.style.width = '100%'
+    outer1.style.height = '100%'
+    outer1.style.zIndex = '1'
+  })
+
+document.getElementById("outer1").addEventListener("click", function() {
+    var profile_overlay = document.getElementById('profile-overlay')
+    var outer1 = document.getElementById('outer1')
+
+    profile_overlay.style.display = 'none'
+    outer1.style.width = '0%'
+    outer1.style.height = '0%'
+    outer1.style.zIndex = '0'
+})
+
+document.getElementById("sign-out").addEventListener("click", function() {
+    signOut(auth)
+})  

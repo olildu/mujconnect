@@ -4,27 +4,35 @@
         <title> Welcome To MUJ Connect</title>
     </head>
     <body>
+        <div id="outer1"></div>
         <div class="header-bar">
             <div class="profile-pic" id="profile-pic"></div>
         </div>
         <div class="flexx">
             <div class="left-bar" id="nav-bar">
                 <div class="text-holder" id="text-holder">
-                    <div class="home-div" id="home-div">
-                        <p>Home</p>
-                        <img src="/images/home.png">
+                    <div class="logo-div" id="home-div" onclick="window.location = '#'">
+                        <div class="center-logo">
+                            <p id="logo-p">MUJConnect</p>
+                            <img id="logo" src="/images/logo.png">
+                        </div>
+                        <div class="underline"></div>
                     </div>
-                    <div class="notes-div">
-                        <p>Notes</p>
-                        <img src="/images/sticky-note.png">
+                    <div class="home-div" id="home-div" onclick="window.location = '#'">
+                        <p class="small-p">Home</p>
+                        <img class="small-icons" src="/images/home.png">
                     </div>
-                    <div class="chat-div" id="chat-div">
-                        <p>Chats</p>
-                        <img src="/images/chat1.png">
+                    <div class="notes-div" onclick="window.location = '/notes.html'">
+                        <p class="small-p">Notes</p>
+                        <img class="small-icons" src="/images/sticky-note.png">
+                    </div>
+                    <div class="chat-div" id="chat-div" onclick="window.location = '/chat.html'">
+                        <p class="small-p">Chats</p>
+                        <img class="small-icons" src="/images/chat1.png">
                     </div class="notes-div">  
-                    <div class="pomodoro-div" id="pomodoro-div">
-                        <p>Pomodoro</p>
-                        <img src="/images/pomodoro.png">
+                    <div class="pomodoro-div" id="pomodoro-div" onclick="window.location = '/pomodoro.html'">
+                        <p class="small-p">Pomodoro</p>
+                        <img class="small-icons" src="/images/pomodoro.png">
                     </div class="notes-div"> 
                 </div>
             </div>
@@ -33,19 +41,26 @@
             </div>
         </div>
         <div class="flex-container">
-            <div class="children notes">
+            <div class="children notes" onclick="window.location = '/notes.html'">
                 <h2>Notes</h2>
                 <p>Create new notes, delete, edit from any device of yours</p>
             </div>
             
-            <div class="children chats">
+            <div class="children chats" onclick="window.location = '/chat.html'">
                 <h2>Chats</h2>
                 <p>Chat with friends and groups</p>
             </div>
-            <div class="children pomodoro">
+            <div class="children pomodoro" onclick="window.location = '/pomodoro.html'">
                 <h2>Pomodoro</h2>
                 <p>Helps you to focus better on studying with spotify widget</p>
             </div>
+        </div>
+        <div id="profile-overlay">
+            <div class="profile-settings">
+                <img src="/images/user.png">
+                <nobr><p>Profile Setting</p></nobr>
+            </div>
+            <button id="sign-out">Sign Out</button>
         </div>
     </body>
 

@@ -123,12 +123,12 @@ function extend_navbar(){
     var outer1 = document.getElementById('outer1')
     var spotify_player = document.getElementById('spotify-player')
 
-    spotify_player.style.opacity = '0'
     outer1.style.width = '100%'
     outer1.style.height = '100%'
+    outer1.style.zIndex = '1'
+    spotify_player.style.opacity = '0'
     text_holder.style.left = '50%'
     left_bar.style.width = '70px'
-    outer1.style.zIndex = '1'
 }
 
 document.getElementById("outer1").addEventListener("click", function() {
