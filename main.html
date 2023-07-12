@@ -4,20 +4,47 @@
         <title> Welcome To MUJ Connect</title>
     </head>
     <body>
-        <div class="nav-header">
-            <h1>Welcome to MUJ Connect</h1>
-            <button id="signout" class="signout">Sign Out</button>
+        <div class="header-bar">
+            <div class="profile-pic" id="profile-pic"></div>
         </div>
-        <div class="applications-contents">
-            <div class="chat-div" onclick="window.location='/chat.html'">
-                <div class="border-guard">
-                    <p>Chat</p>
+        <div class="flexx">
+            <div class="left-bar" id="nav-bar">
+                <div class="text-holder" id="text-holder">
+                    <div class="home-div" id="home-div">
+                        <p>Home</p>
+                        <img src="/images/home.png">
+                    </div>
+                    <div class="notes-div">
+                        <p>Notes</p>
+                        <img src="/images/sticky-note.png">
+                    </div>
+                    <div class="chat-div" id="chat-div">
+                        <p>Chats</p>
+                        <img src="/images/chat1.png">
+                    </div class="notes-div">  
+                    <div class="pomodoro-div" id="pomodoro-div">
+                        <p>Pomodoro</p>
+                        <img src="/images/pomodoro.png">
+                    </div class="notes-div"> 
                 </div>
             </div>
-            <div class="note-div" onclick="window.location='/notes.html'">
-                <div class="border-guard">
-                    <p>Notes</p>
-                </div>
+            <div class="background-image">
+                <h1>Welcome,<br></h1> <h2 id="Name"></h2>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="children notes">
+                <h2>Notes</h2>
+                <p>Create new notes, delete, edit from any device of yours</p>
+            </div>
+            
+            <div class="children chats">
+                <h2>Chats</h2>
+                <p>Chat with friends and groups</p>
+            </div>
+            <div class="children pomodoro">
+                <h2>Pomodoro</h2>
+                <p>Helps you to focus better on studying with spotify widget</p>
             </div>
         </div>
     </body>

@@ -8,7 +8,7 @@ body{
 .left-bar{  
     width: 0px;
     height: 100%;
-    background-color: black;
+    background-color: #202124;
     display: block;
     position: fixed;
     top: 0;
@@ -33,6 +33,13 @@ body{
     transition: all 0.5s;
 }
 .notes-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.pomodoro-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.pomodoro-div:hover{
     background-color: rgba( 255, 255, 255, .1);
 }
 .text-holder img{
@@ -207,7 +214,7 @@ body{
     border: 1px solid black;
     position: absolute;
     border-radius: 8px;
-    top: 50px;
+    top: 70px;
     resize: none;
     padding: 15px 10px 10px 10px;
     transition: height 0.3s ease-in-out;
@@ -222,17 +229,15 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-.saved-notes-container{
+.saved-notes-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    position: absolute; 
     grid-gap: 40px;
     position: absolute;
     top: 25%;
-    left: 15%;
+    left: 13%;
     padding: 0 0 100px 0;
 }
-
 .saved-notes p{
     font-family: 'Inria Sans', sans-serif;
     font-size: 23px;
@@ -243,10 +248,9 @@ body::-webkit-scrollbar{
     padding-right: 20px;
     overflow: hidden;
     word-wrap: break-word;
-    --max-lines: 6    ;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: var(--max-lines);
+    -webkit-line-clamp: var(6);
     bottom: 55px;
     margin-bottom: 0px;
 }
@@ -344,32 +348,36 @@ body::-webkit-scrollbar{
     top: 55%;
     transform: translate(-50%, -50%);
 }
+.header-bar{
+    width: 100%;
+    height: 48px;
+    background-color: #202124;
+}
 .three-lines-container{
     position: absolute;
     width: 40px;
     height: 20px;
-    top: 20px;
+    top: 15px;
     left: 20px;
     cursor: pointer;
+    z-index: 3;
 }
 .line-1{
     width: 35px;
     height: 2px;
-    background-color: black;
+    background-color: white;
 }
-
 .line-2{
     width: 35px;
     height: 2px;
-    background-color: black;
+    background-color: white;
     position: absolute;
     top: 7px;
 }
-
 .line-3{
     width: 35px;
     height: 2px;
-    background-color: black;
+    background-color: white;
     position: absolute;
     top: 14px;
 }
@@ -379,7 +387,16 @@ body::-webkit-scrollbar{
     height: 0%;
     z-index: 1;
 }
+.profile-pic{
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 39px;
+    height: 39px;
+    background-color: white;
+    border-radius: 50%;
 
+}
 @keyframes spin {
     to {
       transform: rotate(360deg);
@@ -448,6 +465,17 @@ body::-webkit-scrollbar{
 @media screen and (max-width: 1100px ){
     .saved-notes-container{
         grid-template-columns: auto auto auto;
+        }
+    .new-note{
+        left: 45%;
+    }
+    #take-note{
+        width: 450px;
+    }
+}
+@media screen and (max-width: 912px ){
+    .saved-notes-container{
+        grid-template-columns: auto auto;
         }
     .new-note{
         left: 45%;

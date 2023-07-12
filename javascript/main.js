@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAuth,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth,onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -15,14 +15,13 @@ const auth = getAuth();
 
 
 auth.onAuthStateChanged(user =>{
+    console.log(user.photoURL)
     if (user == null){
         window.location = '/login.html'
     }
+    else{
+        document.getElementById('Name').textContent = user.displayName
+        document.getElementById('profile-pic').style.backgroundImage = `url(${user.photoURL})`
+    }
 })
 
-
-document.getElementById("signout").addEventListener("click", function() {
-    signOut(auth).then(() => {
-        window.location = '/login.html'
-      })
-    })

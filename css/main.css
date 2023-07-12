@@ -1,110 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap');
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: #e6edfa;
+    font-family: 'Inria Sans', sans-serif;
 }
-.applications-contents img{
-    height: 150;
-    position: relative;
-    right: 20;
-    bottom: 25;
-}
-.applications-contents p{
-    position: relative;
-    left: 25;
-    font-family: sans-serif;
-    font-size: 20;
-}
-.chat-div{
-    width: 300;
-    height: 200;
-    background-color: rgb(221, 209, 209);
-    position: absolute;
-    transform: translate(-120%,-90%);
-    top: 50%;
-    left: 50%;
-    padding: 40;
-    background-image: url('https://olildu.github.io/mujconnect/images/chat.png');
-    cursor: pointer;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 2px 5px 5px rgb(214, 213, 213);
-}
-.chat-div img{
-    position: relative;
-    right: 28;
-}
-
-
-.chat-div:hover{
-    transition: 0.3s;
-    background-color: rgb(173, 163, 163);;
-}
-.note-div{
-    width: 300;
-    height: 200;
-    background-color: rgb(221, 209, 209);
-    position: absolute;
-    transform: translate(20%,-90%);
-    top: 50%;
-    left: 50%;
-    padding: 40;
-
-    background-image: url('https://olildu.github.io/mujconnect/images/test.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-    box-shadow: 0px 2px 5px 5px rgb(214, 213, 213);
-
-    border-radius: 0px;
-}
-.note-div:hover{
-    transition: 0.3s;
-    background-color: rgb(173, 163, 163);;
-}
-
-.note-div img{
-    width: 200;
-}
-.nav-header{
-    font-family: sans-serif;
+.header-bar{
     width: 100%;
-    height: 40;
-    background-color: #eacf9e;
-    box-shadow: 0px 1px 2px 1px rgb(177, 174, 174);
+    height: 48px;
+    background-color: #ffffff;
+}
+.three-lines-container{
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+.line-1{
+    width: 35px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+}
+.line-2{
+    width: 35px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 7px;
+}
+.line-3{
+    width: 35px;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 14px;
+}
+#outer1{
+    position: absolute;
+    width: 0%;
+    height: 0%;
     z-index: 1;
 }
-.nav-header h1{
-    font-size: 25;
+.profile-pic{
     position: absolute;
-    left: 2%;
-    font-weight: 20;
-    top: -11;
-    color: #000000;
+    right: 15px;
+    top: 12px;
+    width: 55px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
 }
-.border-guard{
-    height: 20%;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-radius: 20;
-    background-color: white;
+.left-bar{  
+    width: 256px;
+    height: 100%;
+    background-color: #202124;
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    transition: all 0.5s;
+    border-right: 1px solid rgba(150, 150, 150, 0.456);
 }
-.signout{
-    border: none;
-    height: 30;
-    outline: none;
-    position: absolute;
-    background-color: rgb(199, 58, 58);
+.home-div{
+    height: 60px;
+    border-radius: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.home-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}.chat-div{
+    height: 60px;
+    border-radius: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.chat-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.notes-div{
+    height: 60px;
+    border-radius: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+}   
+.notes-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.pomodoro-div{
+    height: 60px;
+    border-radius: 10px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.pomodoro-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.text-holder img{
+    position: relative;
+    left: 20px;
+    width: 30px;
+    bottom: 30px;
+    height: 30px;
+    display: block;
+}
+.text-holder p{
+    position: relative;
+    left: 70px;
+    top: 18px;
     color: white;
-    font-size: 18px;
-    font-family: sans-serif;
-    width: 90;
-    right: 10px;
-    top: 4px;
-    border-radius: 10%;
+    font-size: 20px;
+    width: 0px;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.text-holder{
+    position: relative;
+    margin-top: auto;
+    margin: 0;
+    position: absolute;
+    top: 300px;
+    left: 125px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -90%);
+    transition: all 0.5s;
+}
+.flexx{
+    display: flex;
+
+}
+.background-image{
+    width: 100%;
+    height: 350px;
+    background-image: url('/images/blob-scene-haikei.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 256px;
+    position: relative;
+    bottom: 85px;
+}
+.background-image h1{
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 80px;
+    position: absolute;
+    top: 50px;
+    color: white;
+    left: 120px;
+}
+.background-image h2{
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 60px;
+    position: absolute;
+    color: white;
+    top: 210px;
+    left: 48%;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    
+}
+.flex-container {
+    position: relative;
+    margin-left: 256px;
+    display: flex;
+    width: calc(75% - 10px);
+    height: 800px;
+    left: 42%;
+    top: 400px;
+    transform: translate(-50%,-50%);
+    align-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+.children{
+    width: 460px;
+    height: 275px;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.168);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.children:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.405);
+}
+
+.children h2{
+    position: absolute;
+    bottom: 16px;
+    left: 15px;
+    font-weight: 88;
+    
+}
+.children p{
+    position: absolute;
+    bottom: -6px;
+    left: 15px;
+    color: rgba(0, 0, 0, 0.915);
+}
+.notes {
+    background-image: url('/images/notes-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: -75px;
+}
+.chats {
+    background-image: url('/images/chats-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: -75px;
+}
+.pomodoro {
+    background-image: url('/images/pomdoro-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: -75px;
 }

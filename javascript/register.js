@@ -61,3 +61,8 @@ function passwordverify(password) {
 document.getElementById("login-button").addEventListener("click", function() {
     window.location = '/login.html'
 })
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      document.getElementById('signup-button').click()
+    }
+  });

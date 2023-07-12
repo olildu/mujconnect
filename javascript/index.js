@@ -16,10 +16,11 @@ const auth = getAuth();
 onAuthStateChanged(auth, (user) => {
   if (user) {
     var Name = String(user.displayName)
+    
     if(Name == 'null'){
     }
     else {
-      window.location = '/main.html'
+      window.location = '/main.html' 
   }}
 });
 
@@ -28,7 +29,20 @@ document.getElementById("done-button").addEventListener("click", function() {
     updateProfile(auth.currentUser, {
         displayName: name
       }).then(() => {
+        console.log(name)
+        if (user.photoURL == null){
+          const final_name = name.split(" ").slice(0, 2).join("+");
+          console.log(final_name)
+          updateProfile(auth.currentUser, {
+              photoURL: `https://ui-avatars.com/api/?name=${final_name}`});
+          }
+
         window.location = '/main.html'
       })
 })
 
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    document.getElementById('done-button').click()
+  }
+});

@@ -137,7 +137,10 @@ onAuthStateChanged(auth, (user) => {
 
 document.getElementById("take-note").addEventListener("click", function(event) {
   var element = document.getElementById('take-note')
-  element.style.animation = "movein 0.5s ease-in-out forwards";
+  var containered = document.getElementById('saved-notes-container')
+
+  containered.style.top = '27%'
+  // element.style.animation = "movein 0.2s ease-in-out forwards";
   
   var max_window = document.getElementById('outer')
   max_window.style.width = '100%';
@@ -145,8 +148,8 @@ document.getElementById("take-note").addEventListener("click", function(event) {
 })
 
 document.getElementById("outer").addEventListener("click", function(event) {
-  var element = document.getElementById('take-note')
   var max_window = document.getElementById('outer')
+  var containered = document.getElementById('saved-notes-container')
 
   max_window.style.width = '0%';
   max_window.style.height = '0%';
@@ -171,7 +174,8 @@ document.getElementById("outer").addEventListener("click", function(event) {
   update(ref(database, "/"+ '/notes/' + uid), {notes_number:count})
   var note = document.getElementById("take-note").value = "" });
 
-  element1.style.animation = "moveout 0.4s ease-in forwards";
+  element1.style.animation = "moveout 0s ease-in forwards";
+  containered.style.top = '23%'
 
 
 })

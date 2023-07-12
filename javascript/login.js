@@ -37,6 +37,7 @@ document.getElementById("signup-button").addEventListener("click", function() {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           var Name = String(user.displayName)
+          console.log(Name)
           if(Name == 'null'){
             window.location = '/set-username.html'
           }
