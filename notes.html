@@ -10,9 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <div class="header-bar">
-            <div class="three-lines-container" onclick="extend_navbar()">
+            <div id="three-lines-container" class="three-lines-container">
               <div class="line-1"></div>
               <div class="line-2"></div>
               <div class="line-3"></div>
@@ -20,10 +19,13 @@
             <div id="profile-pic">
             </div>
           </div>
+          <div id="outer2"></div>
 
         <div class="left-bar" id="nav-bar">
-            <div class="underline"></div>
-            <div class="rectangle"></div>
+            <div class="logo-div" id="logo-div">
+                <img id="logo" src="/images/logo.png">
+                <div class="underline"></div>
+            </div>
             <div class="text-holder" id="text-holder">
                 <div class="home-div" id="home-div">
                     <img src="/images/home.png">
@@ -34,9 +36,13 @@
                 <div class="chat-div" id="chat-div">
                     <img src="/images/chat1.png">
                 </div class="notes-div">  
+                <div class="pomodoro-div" id="pomodoro-div" onclick="window.location = '/pomodoro.html'">
+                    <img src="/images/pomodoro.png">
+                </div class="notes-div"> 
             </div>
         </div>
-        
+
+
         <div id="outer1"></div>
         <div id="outer"></div>
         
@@ -52,7 +58,13 @@
             <p id="text">Loading</p>
             <div class="spinner" id="spinner"></div>
         </div>
-
+        
+        <div id="profile-overlay">
+            <div class="profile-settings" id="profile-settings" onclick="window.location = '/profile-settings.html'">
+                <img src="/images/user.png">
+                <nobr><p>Profile Settings</p></nobr>
+            </div>
+            <button id="sign-out">Sign Out</button>
+        </div>
     </body>
     <script src="javascript/notes1.js" type="module"></script>
-    <script src="javascript/test.js" ></script>

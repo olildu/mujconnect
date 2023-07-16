@@ -123,12 +123,19 @@ body{
   margin-bottom: 32px;
   padding-bottom: 6px;
 }
+.buttons{
+  background-color: rgba(101, 101, 101, 0.433)
+}
+.buttons:hover{
+  background-color: rgba(56, 56, 56, 0.714);
+  color: white;
+}
 .change-password {
   position: absolute;
   top: 185px;
   left: 65px;
   margin: 0px;
-  width: calc(35% - 30px);
+  width: calc(45% - 30px);
   min-width: 500px;
 
 }
@@ -138,7 +145,7 @@ body{
   color: rgba(0, 0, 0, 0.722);
 }
 
-.button-c{
+#button-c{
   position: absolute;
   width: 84px;
   height: 33px;
@@ -146,18 +153,20 @@ body{
   right: 10px;
   border-radius: 999999px;
   padding: 0px 10px 10px px;
-  border: 1px solid black;
   outline: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: lighter;
   cursor: pointer;
+  border: none;
+  transition: all 0.5s; 
+
 }
 .change-name {
   position: absolute;
   top: 270px;
   left: 65px;
   margin: 0px;
-  width: calc(35% - 30px);
+  width: calc(45% - 30px);
   min-width: 500px;
 }
 .change-name p{
@@ -165,27 +174,28 @@ body{
   font-weight: lighter;
   color: rgba(0, 0, 0, 0.722);
 }
-.button-p{
+
+#button-p{
   position: absolute;
   width: 84px;
   height: 33px;
   top: 14px;
   right: 10px;
   border-radius: 999999px;
-  padding: 0px 10px 10px px;
-  border: 1px solid black;
+  border: none;
   outline: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bo;
   cursor: pointer;
+  transition: all 0.5s; 
 }
 .change-pfp {
   position: absolute;
   top: 375px;
   left: 65px;
   margin: 0px;
-  width: calc(35% - 30px);
+  width: calc(45% - 30px);
   min-width: 500px;
+  z-index: -1;
 }
 .change-pfp p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -229,4 +239,59 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+#outer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.second-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.163);
+  display: none;
+}
+.change-container{
+  width: 300px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  left: 50%;
+  top: 30%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  z-index: 2;
+  
+}
+.change-container h2{
+  margin-left: 15px;
+  padding-bottom: 15px;
+}
+.change-container p{
+  margin-left: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.change-container input{
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  margin-left: 15px;
+}
+#save-changes{
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 95px;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  background-color: rgb(210, 65, 65);
+  bottom: 13px;
+  transition: all 0.5s;
+}
+#save-changes:hover{
+  background-color: rgb(177, 37, 37);
 }

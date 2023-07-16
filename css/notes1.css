@@ -42,6 +42,27 @@ body{
 .pomodoro-div:hover{
     background-color: rgba( 255, 255, 255, .1);
 }
+.logo-div {
+    border-radius: 10px;
+    transition: all 0.5s;
+    position: absolute;
+    top: 10px;
+    left: -60px;
+}
+.logo-div:hover {
+    background-color: rgba( 255, 255, 255, .1);
+
+}
+.logo-div img {
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+}
 .text-holder img{
     padding-top: 12px;
     padding-left: 12px;
@@ -52,16 +73,15 @@ body{
     display: block;
     cursor: pointer;
 }
-.text-holder{
-    position: relative;
-    margin-top: auto;
+.text-holder {
+    display: flex;
     margin: 0;
     position: absolute;
     top: 50%;
     left: -20px;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: all 0.5s;
+    flex-direction: column;
 }
 
 .new-note{
@@ -360,8 +380,7 @@ body::-webkit-scrollbar{
     top: 15px;
     left: 20px;
     cursor: pointer;
-    z-index: 3;
-}
+    }
 .line-1{
     width: 35px;
     height: 2px;
@@ -399,6 +418,72 @@ body::-webkit-scrollbar{
     background-position: center;
     background-size: cover;
     cursor: pointer;
+}
+#profile-overlay{
+    position: absolute;
+    right: 30px;
+    top: 80px;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.168);
+    transition: all 0.34s ease-in-out;
+    padding: 10px 10px 10px 10px;
+    display: none;
+    opacity: 0;
+    z-index: 2;
+}
+#profile-overlay p{
+    font-size: 20px;
+    position: absolute;
+    bottom: -13px;
+    left: 50px;
+}
+#profile-overlay button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: rgb(199, 58, 58);
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.4S ease-in; 
+    cursor: pointer;
+}
+#profile-overlay button:hover{
+    background-color: rgb(161, 24, 24);
+}
+.profile-settings img{
+    position: absolute;
+    height: 27px;
+    top: 5px;
+    left: 10px;
+}
+.profile-settings{
+    height: 40;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    position: relative;
+    bottom: -5px;
+    cursor: pointer;
+
+}
+.profile-settings:hover{
+    background-color: rgba(143, 138, 138, 0.211);
+}
+.underline {
+    position: relative;
+    width: 30px;
+    height: 1px;
+    top: 7px;
+    left: 14px;
+    background-color: rgba(255, 255, 255, 0.523);
 }
 @keyframes spin {
     to {

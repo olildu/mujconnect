@@ -327,6 +327,7 @@ body{
 .profile-settings:hover{
     background-color: rgba(143, 138, 138, 0.211);
 }
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

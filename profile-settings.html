@@ -4,33 +4,26 @@
   <link rel="stylesheet" href="css/test.css">
 </head>
 <body>
+
   <div class="big-overlay">
+    <div id="second-overlay" class="second-overlay">
+      <div id="outer"></div>
+      <div class="change-container">
+          <h2 id="pass-name-h2">Change Password</h2>
+          <p id="pass-name-p">Enter your password</p>
+          <input id="pass-name-input" class="change-input" type="password">
+          <button id="save-changes">Save Changes</button>
+      </div>
+    </div>
     <div class="header-bar">
       <div class="three-lines-container" onclick="extend_navbar()">
         <div class="line-1"></div>
         <div class="line-2"></div>
         <div class="line-3"></div>
       </div>
-      <div class="profile-pic">
-      </div>
+      <div class="profile-pic"></div>
     </div>
-    <div class="container">
-      <div class="left-bar" id="nav-bar">
-        <div class="underline"></div>
-        <div class="rectangle"></div>
-        <div class="text-holder" id="text-holder">
-            <div class="home-div" id="home-div" title="Home">
-                <img src="/images/home.png">
-            </div>
-            <div class="notes-div" title="Notes">
-                <img src="/images/sticky-note.png">
-            </div>
-            <div class="chat-div" id="chat-div" title="Chats">
-                <img src="/images/chat1.png">
-            </div class="notes-div">  
-      </div>
 
-    </div>
     <div class="details-container" >
       <nobr><h2>User Settings</h2></nobr>
         <h3 class="acc-pref">PERSONAL INFROMATION</h3>
@@ -38,12 +31,12 @@
           <div class="change-password">
             <p>Change Password</p>
             <p class="small-p">Make sure the password is strong and secure</p>
-            <button class="button-c">Change</button>
+            <button class="buttons" id="button-c">Change</button>
           </div>
           <div class="change-name">
             <p class="class">Change Display Name</p>
             <p class="small-p">Choose a name which is respectful and meaningful</p>
-            <button class="button-p">Change</button>
+            <button id="button-p" class="buttons">Change</button>
           </div>
           <div class="change-pfp">
             <p class="class">Change Profile Picture</p>
@@ -51,9 +44,10 @@
             <div id="button-pfp"><div class="small-camera"></div></div>
           </div>
         </div>
-    </div>
+      </div>
     </div>
   </div>
+  
 </body>
 </html>
 <script src="javascript/test.js" type="module"></script>

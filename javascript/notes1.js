@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getDatabase, ref, get, child, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { getAuth, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -244,3 +244,55 @@ function click_listener() {
     }, 1000);
   });
 }
+
+document.getElementById("three-lines-container").addEventListener("click", function(event) {
+  var left_bar = document.getElementById('nav-bar')
+  var text_holder = document.getElementById('text-holder')
+  var outer1 = document.getElementById('outer1')
+  var logo = document.getElementById('logo-div')
+
+  outer1.style.width = '100%'
+  outer1.style.height = '100%'
+  outer1.style.zIndex = '1'
+  text_holder.style.left = '34px'
+  left_bar.style.width = '70px'
+  logo.style.left = '5px'
+})
+document.getElementById("outer1").addEventListener("click", function() {
+
+  var left_bar = document.getElementById('nav-bar')
+  var text_holder = document.getElementById('text-holder')
+  var outer1 = document.getElementById('outer1')
+  var logo = document.getElementById('logo-div')
+
+  outer1.style.width = '0vh';
+  outer1.style.height = '0vh';
+  text_holder.style.left = '-20px';
+  left_bar.style.width = '0px';
+  outer1.style.zIndex = '-2';
+  logo.style.left = '-60px'
+})
+document.getElementById("profile-pic").addEventListener("click", function() {
+  var profile_overlay = document.getElementById('profile-overlay')
+  var outer2 = document.getElementById('outer2')
+
+  profile_overlay.style.display = 'block'
+  profile_overlay.style.animation = 'fadein 0.5s ease-out forwards';
+  outer2.style.width = '100%'
+  outer2.style.height = '100%'
+  outer2.style.zIndex = '1'
+  outer2.style.position = 'relative'
+})
+
+document.getElementById("outer2").addEventListener("click", function() {
+  var profile_overlay = document.getElementById('profile-overlay')
+  var outer2 = document.getElementById('outer2')
+
+  profile_overlay.style.display = 'none'
+  outer2.style.width = '0%'
+  outer2.style.height = '0%'
+  outer2.style.zIndex = '0'
+})
+document.getElementById("sign-out").addEventListener("click", function() {
+  signOut(auth)
+})  

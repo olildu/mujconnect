@@ -50,3 +50,4 @@ document.getElementById("outer1").addEventListener("click", function() {
 document.getElementById("sign-out").addEventListener("click", function() {
     signOut(auth)
 })  
+
