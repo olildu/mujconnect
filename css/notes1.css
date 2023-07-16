@@ -387,7 +387,7 @@ body::-webkit-scrollbar{
     height: 0%;
     z-index: 1;
 }
-.profile-pic{
+#profile-pic{
     position: absolute;
     right: 8px;
     top: 5px;
@@ -395,7 +395,10 @@ body::-webkit-scrollbar{
     height: 39px;
     background-color: white;
     border-radius: 50%;
-
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
 }
 @keyframes spin {
     to {

@@ -16,26 +16,27 @@
             <div class="line-2"></div>
             <div class="line-3"></div>
         </div>
-
-
         <div class="left-bar" id="nav-bar">
-            <div class="underline"></div>
-            <div class="rectangle"></div>
+            <div class="logo-div" id="logo-div">
+                <img id="logo" src="/images/logo.png">
+                <div class="underline"></div>
+            </div>
             <div class="text-holder" id="text-holder">
-                <div class="home-div" id="home-div" title="Home">
+                <div class="home-div" id="home-div" title="Home" onclick="window.location = '/main.html'">
                     <img src="/images/home.png">
                 </div>
-                <div class="notes-div" title="Notes">
+                <div class="notes-div" title="Notes" onclick="window.location = '/notes.html'">
                     <img src="/images/sticky-note.png">
                 </div>
-                <div class="chat-div" id="chat-div" title="Chats">
+                <div class="chat-div" id="chat-div" title="Chats" onclick="window.location = '/chat.html'">
                     <img src="/images/chat1.png">
                 </div class="notes-div">  
+                <div class="pomodoro-div" id="pomodoro-div" onclick="window.location = '#'">
+                    <img src="/images/pomodoro.png">
+                </div class="notes-div"> 
             </div>
         </div>
-
         <div id="outer1"></div>
-
         <div class="timer-wrapper">
             <div class="timer-container">
                 <h1 id="timer">25:00</h1>

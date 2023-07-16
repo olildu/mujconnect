@@ -40,6 +40,35 @@ body{
 .notes-div:hover{
     background-color: rgba( 255, 255, 255, .1);
 }
+.pomodoro-div{
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.pomodoro-div:hover{
+    background-color: rgba( 255, 255, 255, .1);
+}
+.logo-div {
+    border-radius: 10px;
+    transition: all 0.5s;
+    position: absolute;
+    top: 10px;
+    left: -60px;
+}
+.logo-div:hover {
+    background-color: rgba( 255, 255, 255, .1);
+
+}
+
+.logo-div img{
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+}
 .text-holder img{
     padding-top: 12px;
     padding-left: 12px;
@@ -50,16 +79,15 @@ body{
     display: block;
     cursor: pointer;
 }
-.text-holder{
-    position: relative;
-    margin-top: auto;
+.text-holder {
+    display: flex;
     margin: 0;
     position: absolute;
     top: 50%;
     left: -20px;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: all 0.5s;
+    flex-direction: column;
 }
 
 .waiter{
@@ -82,9 +110,16 @@ body{
     border-color: rgb(204, 202, 202) transparent rgb(141, 138, 138) transparent;
     border-radius: 50%;
     animation: spin 1.3s ease infinite;
-  }
-
-  .changed-spinner{
+}
+.underline {
+    position: relative;
+    width: 30px;
+    height: 1px;
+    top: 7px;
+    left: 14px;
+    background-color: rgba(255, 255, 255, 0.523);
+}
+.changed-spinner{
     height: 120px;
     width: 120px;
     border: 6px solid;
@@ -93,8 +128,8 @@ body{
     animation: spin 1.3s ease infinite;
     opacity: 0;
     transition: all 0.3s ease-out;
-  }
-  .changed-text{
+}
+.changed-text{
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: black;
@@ -103,7 +138,7 @@ body{
     left: 22px;
     opacity: 0;
     transition: all 0.3s ease-out;
-  }
+}
 
 .timer-container{
     width: 450px;

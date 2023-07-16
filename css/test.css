@@ -1,16 +1,232 @@
-.tip{
-    width: 15px;
-    height: 15px;
-    background-color: rgb(54, 53, 53);
-    transform: rotate(45deg);
-    position: absolute;
-    top: 15px;
-  }
-  .box{
-    width: 70px;
-    height: 30px;
-    background-color: rgb(54, 53, 53);
-    position: absolute;
-    left: 11px;
-    border-radius: 8px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #eff5ef;
+  min-width: 900px;
+  font-family: 'Inria Sans', sans-serif;
+}
+.container{
+  display: flex;
+}
+.left-bar{  
+  width: 70px;
+  height: 100vh;
+  background-color: #202124;
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s;
+  display: none;
+}
+.home-div{
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.home-div:hover{
+  background-color: rgba( 255, 255, 255, .1);
+}.chat-div{
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.chat-div:hover{
+  background-color: rgba( 255, 255, 255, .1);
+}
+.notes-div{
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.notes-div:hover{
+  background-color: rgba( 255, 255, 255, .1);
+}
+.text-holder img{
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  width: 35px;
+  height: 35px;
+  display: block;
+  cursor: pointer;
+}
+.text-holder{
+  position: relative;
+  margin-top: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+.header-bar{
+  width: 100%;
+  height: 48px;
+  background-color: #202124;
+}
+.three-lines-container{
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 15px;
+  left: 14px;
+  cursor: pointer;
+  z-index: 3;
+}
+.line-1{
+  width: 35px;
+  height: 2px;
+  background-color: white;
+}
+.line-2{
+  width: 35px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 7px;
+}
+.line-3{
+  width: 35px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  top: 14px;
+}
+.details-container{
+  width: 100%;
+  position: relative;
+  margin-left: calc(90px)
+}
+.details-container h2{
+  position: absolute;
+  height: 10px;
+  left: 35px;
+  top: 35px;
+}
+
+.acc-pref {
+  position: relative;
+  top: 105px;
+  right: -38px;
+  width: 80%;
+  height: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.629);
+  color: rgba(0, 0, 0, 0.629);
+  margin-bottom: 32px;
+  padding-bottom: 6px;
+}
+.change-password {
+  position: absolute;
+  top: 185px;
+  left: 65px;
+  margin: 0px;
+  width: calc(35% - 30px);
+  min-width: 500px;
+
+}
+.change-password p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.722);
+}
+
+.button-c{
+  position: absolute;
+  width: 84px;
+  height: 33px;
+  top: 14px;
+  right: 10px;
+  border-radius: 999999px;
+  padding: 0px 10px 10px px;
+  border: 1px solid black;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  cursor: pointer;
+}
+.change-name {
+  position: absolute;
+  top: 270px;
+  left: 65px;
+  margin: 0px;
+  width: calc(35% - 30px);
+  min-width: 500px;
+}
+.change-name p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.722);
+}
+.button-p{
+  position: absolute;
+  width: 84px;
+  height: 33px;
+  top: 14px;
+  right: 10px;
+  border-radius: 999999px;
+  padding: 0px 10px 10px px;
+  border: 1px solid black;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bo;
+  cursor: pointer;
+}
+.change-pfp {
+  position: absolute;
+  top: 375px;
+  left: 65px;
+  margin: 0px;
+  width: calc(35% - 30px);
+  min-width: 500px;
+}
+.change-pfp p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.722);
+}
+#button-pfp{
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  top: -6px;
+  right: 10px;
+  border-radius: 50%;
+  padding: 0px 10px 10px px;
+  outline: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid white;
+}
+.small-p{
+  font-size: 13px;
+  color: #00000088;
+  position: relative;
+  bottom: 10px;
+}
+.details-children{
+  position: relative;
+  right: 28px;
+  bottom: 90px;
+}
+.small-camera{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 7px;
+  right: 13px;
+  background-image: url("/images/icons8-camera-plus-96.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

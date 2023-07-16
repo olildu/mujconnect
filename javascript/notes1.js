@@ -34,6 +34,7 @@ var ran = false
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = auth.currentUser.uid
+    document.getElementById('profile-pic').style.backgroundImage = `url(${user.photoURL})`
 
     const path = ref(database, '/'+ '/notes/' + uid );
     onValue(path, (snapshot) => {
@@ -139,7 +140,6 @@ document.getElementById("take-note").addEventListener("click", function(event) {
   var element = document.getElementById('take-note')
   var containered = document.getElementById('saved-notes-container')
 
-  containered.style.top = '27%'
   // element.style.animation = "movein 0.2s ease-in-out forwards";
   
   var max_window = document.getElementById('outer')
@@ -175,8 +175,6 @@ document.getElementById("outer").addEventListener("click", function(event) {
   var note = document.getElementById("take-note").value = "" });
 
   element1.style.animation = "moveout 0s ease-in forwards";
-  containered.style.top = '23%'
-
 
 })
 

@@ -1,23 +1,25 @@
-function extend_navbar(){
-  var left_bar = document.getElementById('nav-bar')
-  var text_holder = document.getElementById('text-holder')
-  var outer1 = document.getElementById('outer1')
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { getAuth,onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
-  outer1.style.width = '100%'
-  outer1.style.height = '100%'
-  text_holder.style.left = '50%'
-  left_bar.style.width = '70px'
-  outer1.style.zIndex = '1'
-}
-document.getElementById("outer1").addEventListener("click", function() {
+const firebaseConfig = {
+apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
+authDomain: "muj-connect-d2e2b.firebaseapp.com",
+projectId: "muj-connect-d2e2b",
+storageBucket: "muj-connect-d2e2b.appspot.com",
+messagingSenderId: "790443205869",
+appId: "1:790443205869:web:020a252e60cc19ed3bd8e4"
+};
 
-  var left_bar = document.getElementById('nav-bar')
-  var text_holder = document.getElementById('text-holder')
-  var outer1 = document.getElementById('outer1')
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 
-  outer1.style.width = '0vh';
-  outer1.style.height = '0vh';
-  text_holder.style.left = '-20px';
-  left_bar.style.width = '0px';
-  outer1.style.zIndex = '-2';
+
+auth.onAuthStateChanged(user =>{
+    console.log(user)
+    if (user == null){
+        window.location = '/login.html'
+    }
+    else{
+        document.getElementById('button-pfp').style.backgroundImage = `url(${user.photoURL})`
+    }
 })
