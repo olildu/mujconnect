@@ -22,6 +22,7 @@ auth.onAuthStateChanged(user =>{
     else{
         document.getElementById('Name').textContent = user.displayName
         document.getElementById('profile-pic').style.backgroundImage = `url(${user.photoURL})`
+        document.getElementById('profile-pic').style.border = "1px solid white"
     }
 })
 
