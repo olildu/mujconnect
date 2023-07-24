@@ -1,36 +1,67 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, intial-scale=1.0,height=device-height">
-        <title>Notes</title>
+        <title>Messaging</title>
         <link rel="stylesheet" href="css/chat.css">
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <div class="message">
-            <div class="chats">
-                <p>My Chats</p>
+        <div class="main-container">
+            <div class="left-bar" id="nav-bar">
+                <div class="logo-div" id="logo-div">
+                    <img id="logo" src="/images/logo.png">
+                    <div class="underline"></div>
+                </div>
+                <div class="text-holder" id="text-holder">
+                    <div class="home-div" id="home-div">
+                        <img src="/images/home.png">
+                    </div>
+                    <div class="notes-div">
+                        <img src="/images/sticky-note.png">
+                    </div>
+                    <div class="chat-div" id="chat-div">
+                        <img src="/images/chat1.png">
+                    </div class="notes-div">  
+                    <div class="pomodoro-div" id="pomodoro-div" onclick="window.location = '/pomodoro.html'">
+                        <img src="/images/pomodoro.png">
+                    </div class="notes-div"> 
+                </div>
             </div>
-            <div class="message-functions">
-                <textarea>Send a message...</textarea>
-                <button>Send</button>
+            <div class="prev-messages">
+                <div class="user-information">
+                    <div id="profile-picture"></div>
+                    <div >
+                        <h2 id="profile-name"></h2>
+                    </div>
+                </div>
+                <div class="prev-user" id="prev-user"></div>
             </div>
+            <div class="current-messages">
+                <div class="opp-user-information">
+                    <div id="profile-picture-opp"></div>
+                    <div >
+                        <h2 id="profile-name-opp"></h2>
+                    </div>
+                </div>
+                <div class="live-message" id="live-message">
+                </div>
+                <div class="send-message">
+                    <textarea id="send-msgs"></textarea>
+                    <div class="send-icon">
+                        <span id="final-send" class="material-symbols-rounded changes">
+                            send
+                            </span>
+                    </div>
+                </div>
         </div>
+        <div id="selected-uid"></div>
 
-        <div class="left-bar">
-            <div class="underline"></div>
-            <div class="rectangle"></div>
-            <div class="text-holder">
-                <div class="home-div" id="home-div">
-                    <img src="/images/home.png">
-                </div>
-                <div class="notes-div">
-                    <img src="/images/sticky-note.png">
-                </div>
-                <div class="chat-div" id="chat-div">
-                    <img src="/images/chat1.png">
-                </div class="notes-div">  
-            </div>
-            
     </body>
-    <script src="javascript/notes1.js" type="module"></script>
+    <script src="javascript/chats.js" type="module"></script>

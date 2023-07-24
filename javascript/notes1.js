@@ -118,6 +118,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     const starCountRef = ref(database, '/' + '/notes/' + uid);
+    // update(ref(database, "/"+  '/chats/'+ uid + '/prev_msg_user'  ), {total_number:'1'})
+
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       if(data == null){
@@ -131,7 +133,6 @@ onAuthStateChanged(auth, (user) => {
         update(ref(database, "/"+ '/notes/' + uid ), {notes_number:0})
 
       }
-      update(ref(database, "/"+  '/users/'+ uid  ), {notes_number:0})
       
     });
   }
@@ -143,8 +144,6 @@ document.getElementById("take-note").addEventListener("click", function(event) {
   var element = document.getElementById('take-note')
   var containered = document.getElementById('saved-notes-container')
 
-  // element.style.animation = "movein 0.2s ease-in-out forwards";
-  
   var max_window = document.getElementById('outer')
   max_window.style.width = '100%';
   max_window.style.height = '100%';
