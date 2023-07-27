@@ -36,7 +36,15 @@ document.getElementById("signup-button").addEventListener("click", function() {
             document.getElementById('blur').classList.toggle("fader");
             document.getElementById('popup').classList.toggle("fade-in");
         })
-    })
+        .catch((error) => {
+            // Handle the error
+            if (error.code === "auth/email-already-in-use") {
+                document.getElementById("wrongmail").textContent = "This email is already in use";
+                document.getElementById("wrongmail").style.visibility = "visible";
+            }
+        });
+})
+
 
 function emailverify(email){
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
@@ -45,6 +53,7 @@ function emailverify(email){
     }
     else
     {   
+        document.getElementById("wrongmail").textContent = "This email is invalid";
         document.getElementById("wrongmail").style.visibility = "visible";
         return (false)
     }

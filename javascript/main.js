@@ -15,7 +15,6 @@ const auth = getAuth();
 
 
 auth.onAuthStateChanged(user =>{
-    console.log(user)
     if (user == null){
         window.location = '/login.html'
     }

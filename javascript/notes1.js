@@ -118,7 +118,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     const starCountRef = ref(database, '/' + '/notes/' + uid);
-    // update(ref(database, "/"+  '/chats/'+ uid + '/prev_msg_user'  ), {total_number:'1'})
+    // update(ref(database, "/"+  '/users/'+ '/name_uid'  ), {[uid]: user.displayName})
 
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();

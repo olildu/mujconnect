@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -40,6 +41,11 @@
                     <div >
                         <h2 id="profile-name"></h2>
                     </div>
+                    <div class="search" id="search">
+                        <span class="material-symbols-outlined with-changes">
+                            chat_add_on
+                            </span>
+                    </div>
                 </div>
                 <div class="prev-user" id="prev-user"></div>
             </div>
@@ -60,7 +66,27 @@
                             </span>
                     </div>
                 </div>
+     
         </div>
+        <div class="search-container" id="search-container">
+            <div class="search-information" id="search-information">
+                <div class="arrow_back">
+                    <span id="collapse" class="material-symbols-outlined with-changes" style="width: 35px; height: 35px; cursor: pointer;">
+                        arrow_back
+                        </span>
+                </div>
+                <h2 id="new-chat" style="margin-left: 5px;">New Chat</h2>
+            </div>
+            <div class="results">
+                <input id="user-search" placeholder="Search Users" maxlength="30" ><span class="material-symbols-outlined search-icon" style="width: 10px; height: 10px;">
+                    search
+                    </span></input>
+            </div>
+            <div id="final-users">
+
+            </div>
+        </div>   
+            
         <div id="selected-uid"></div>
 
     </body>

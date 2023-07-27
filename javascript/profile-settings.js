@@ -1,21 +1,22 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut, updateProfile, updatePassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
-import { getStorage, ref, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+import { getAuth, onAuthStateChanged, updateProfile, updatePassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getStorage, ref as reference, uploadBytes, getDownloadURL  } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
 const firebaseConfig = {
-apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
-authDomain: "muj-connect-d2e2b.firebaseapp.com",
-projectId: "muj-connect-d2e2b",
-storageBucket: "muj-connect-d2e2b.appspot.com",
-messagingSenderId: "790443205869",
-appId: "1:790443205869:web:020a252e60cc19ed3bd8e4"
-};
-
+    apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
+    authDomain: "muj-connect-d2e2b.firebaseapp.com",
+    databaseURL: "https://muj-connect-d2e2b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "muj-connect-d2e2b",
+    storageBucket: "muj-connect-d2e2b.appspot.com",
+    messagingSenderId: "790443205869",
+    appId: "1:790443205869:web:020a252e60cc19ed3bd8e4",
+    measurementId: "G-W82YF9C7J0"
+  };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const storage = getStorage();
-
-
+const database = getDatabase(app);
 
 auth.onAuthStateChanged(user =>{
     if (user == null){
@@ -78,8 +79,10 @@ document.getElementById("outer").addEventListener("click", function() {
         }
         updateProfile(auth.currentUser, {
             displayName: name
-          })
-          
+        })
+        const path = ref(database, "/" + 'users/' + auth.currentUser.uid);
+        update(path, {name: auth.currentUser.displayName});
+
         document.getElementById("pass-name-input").value = ''
 
     }
@@ -104,11 +107,14 @@ document.getElementById("save-changes").addEventListener("click", function() {
         }
         updateProfile(auth.currentUser, {
             displayName: name
-          })
-
+        })
+        const path = ref(database, "/" + 'users/' + auth.currentUser.uid);
+        update(path, {name: name});
+        
         document.getElementById("pass-name-input").value = ''
     }
 })
+
 document.getElementById('file').addEventListener('change', function() {
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -174,26 +180,28 @@ function upload(imageDataURL){
             var result = imageDataURL.substring(22);
         } 
 
-        const storageRef = ref(storage, `images/${auth.currentUser.uid}/profile-picture/profile-picture.jpg`);
+        const storageRef = reference(storage, `images/${auth.currentUser.uid}/profile-picture/profile-picture.jpg`);
         console.log(`images/${auth.currentUser.uid}/profile-picture.jpg`)
 
         const bytes = Uint8Array.from(atob(result), (c) => c.charCodeAt(0));
 
         uploadBytes(storageRef, bytes).then((snapshot) => {
-            console.log('Uploaded the image successfully!');
             document.getElementById('upload-done').textContent = 'Upload'
             document.getElementById('material-icons').textContent = 'add_photo_alternate'
             document.getElementById('done').id = 'supp'
             document.getElementById('supp').htmlFor = 'file';
             document.getElementById("dotted-preview").style.backgroundImage = ''
 
+            const path = ref(database, "/" + 'users/' + auth.currentUser.uid);
+            update(path, {pfp: auth.currentUser.photoURL});
         }).catch((error) => {
             console.error('Error uploading the image:', error);
         });
-        getDownloadURL(ref(storage, `images/${auth.currentUser.uid}/profile-picture/profile-picture.jpg`))
+        getDownloadURL(reference(storage, `images/${auth.currentUser.uid}/profile-picture/profile-picture.jpg`))
         .then((url) => {
             updateProfile(auth.currentUser, {
                 photoURL: `${url}`
             })
+
         })  
     })}
