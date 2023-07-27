@@ -233,13 +233,14 @@ body {
     margin-top: 5px;
     border-radius: 50%;
   }
-.opp-user-information{
+  .opp-user-information {
     display: flex;
     align-items: center;
     background-color: rgba(56, 56, 56, 0.714);
     padding: 10px 10px 10px 10px;
     min-width: 336px;
     flex: 0.2;
+    max-height: 58px;
     min-height: 58px;
 }
 .send-message {
@@ -355,7 +356,48 @@ body {
   bottom: 30px;
   margin-left: 10px;
 }
+.waiter{
+  position: absolute;
+  left: 48%;
+  top: 35%;
+}
+.waiter p{
+  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  position: absolute;
+  top: 150px;
+  left: 22px;
+}
+.spinner{
+  height: 60px;
+  width: 60px;
+  border: 6px solid;
+  border-color: rgb(204, 202, 202) transparent rgb(141, 138, 138) transparent;
+  border-radius: 50%;
+  animation: spin 1.3s ease infinite;
+}
 
+.changed-spinner{
+  height: 120px;
+  width: 120px;
+  border: 6px solid;
+  border-color: rgb(204, 202, 202) transparent rgb(141, 138, 138) transparent;
+  border-radius: 50%;
+  animation: spin 1.3s ease infinite;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.changed-text{
+  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  position: absolute;
+  top: 150px;
+  left: 22px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
 
 
 
@@ -366,4 +408,9 @@ body {
 @keyframes fadeout{
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

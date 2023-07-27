@@ -110,7 +110,29 @@ function handleClick() {
     document.getElementById('profile-picture-opp').style.backgroundImage = backgroundImage1;
     send_msg(dataValue, uid);
     read_msgs(dataValue, uid);
-}
+
+    function checkBackgroundImageLoaded(element, imageUrl, callback) {
+        const image = new Image();
+        image.onload = function() {
+          callback(true);
+        };
+        image.onerror = function() {
+          callback(false);
+        };
+        image.src = imageUrl;
+      }
+      
+      const divElement = document.getElementById('profile-picture-opp-prev');
+      
+      checkBackgroundImageLoaded(divElement, function(isLoaded) {
+        if (isLoaded) {
+          console.log('Background image loaded successfully.');
+        } else {
+          console.log('Failed to load background image.');
+        }
+      });
+      
+    }
 
 function read_msgs(dataValue, uid) {
     if (chatRef) {

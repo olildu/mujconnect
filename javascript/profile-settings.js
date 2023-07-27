@@ -81,8 +81,11 @@ document.getElementById("outer").addEventListener("click", function() {
             displayName: name
         })
         const path = ref(database, "/" + 'users/' + auth.currentUser.uid);
-        update(path, {name: auth.currentUser.displayName});
 
+        console.log(typeof auth.currentUser.uid,auth.currentUser.displayName)
+
+        update(path, {name: auth.currentUser.displayName});
+        update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: name})
         document.getElementById("pass-name-input").value = ''
 
     }
@@ -110,6 +113,7 @@ document.getElementById("save-changes").addEventListener("click", function() {
         })
         const path = ref(database, "/" + 'users/' + auth.currentUser.uid);
         update(path, {name: name});
+        update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: name})
         
         document.getElementById("pass-name-input").value = ''
     }

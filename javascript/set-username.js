@@ -44,7 +44,8 @@ document.getElementById("done-button").addEventListener("click", function() {
         update(path, {id: auth.currentUser.uid});
         update(path, {name: auth.currentUser.displayName});
 
-        update(ref(database, "/"+  '/users/'+ '/name_uid'  ), {[auth.currentUser.uid]: auth.currentUser.displayName})
+        console.log(auth.currentUser.uid, auth.currentUser.displayName)
+        update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: auth.currentUser.displayName})
 
         window.location = '/main.html'
       })
