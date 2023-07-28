@@ -294,3 +294,11 @@ checkBackgroundImageLoaded(prev_user_pfp, function(isLoaded) {
     console.log('Failed to load background image.');
   }
 });
+
+function onPageLoad() {
+    console.log("Page fully loaded!");
+    // Add any additional actions you want to perform here
+}
+
+// Event listener to trigger onPageLoad() when the page is fully loaded
+window.onload = onPageLoad;
