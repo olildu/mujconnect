@@ -284,21 +284,9 @@ document.getElementById("user-search").addEventListener("input", e => {
     }, 200);
 });
 
-const divElement = document.getElementById('profile-picture-opp-prev');
-checkBackgroundImageLoaded(prev_user_pfp, function(isLoaded) {
-  if (isLoaded) {
-    console.log('Background image loaded successfully.');
-    // Alert the user when the background image is loaded
-    alert('Background image loaded successfully!');
-  } else {
-    console.log('Failed to load background image.');
-  }
-});
 
 function onPageLoad() {
     console.log("Page fully loaded!");
-    // Add any additional actions you want to perform here
 }
 
-// Event listener to trigger onPageLoad() when the page is fully loaded
 window.onload = onPageLoad;
