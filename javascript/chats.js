@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebas
 import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { getDatabase, ref, get, child, onValue, onChildAdded , update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { getFirestore, doc, onSnapshot, updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -283,4 +282,15 @@ document.getElementById("user-search").addEventListener("input", e => {
             container.innerHTML = "";
         }
     }, 200);
+});
+
+const divElement = document.getElementById('profile-picture-opp-prev');
+checkBackgroundImageLoaded(prev_user_pfp, function(isLoaded) {
+  if (isLoaded) {
+    console.log('Background image loaded successfully.');
+    // Alert the user when the background image is loaded
+    alert('Background image loaded successfully!');
+  } else {
+    console.log('Failed to load background image.');
+  }
 });
