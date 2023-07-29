@@ -360,20 +360,24 @@ body {
   position: absolute;
   left: 48%;
   top: 35%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 .waiter p{
-  font-size: 25px;
+  font-size: 23px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: black;
-  position: absolute;
-  top: 150px;
-  left: 22px;
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
 }
 .spinner{
-  height: 60px;
-  width: 60px;
+  height: 90px;
+  width: 90px;
   border: 6px solid;
-  border-color: rgb(204, 202, 202) transparent rgb(141, 138, 138) transparent;
+  border-color: rgb(125, 125, 125) transparent rgb(178, 178, 178) transparent;
   border-radius: 50%;
   animation: spin 1.3s ease infinite;
 }
@@ -382,24 +386,26 @@ body {
   height: 120px;
   width: 120px;
   border: 6px solid;
-  border-color: rgb(204, 202, 202) transparent rgb(141, 138, 138) transparent;
+  border-color: rgb(204, 202, 202) transparent rgb(80, 79, 79) transparent;
   border-radius: 50%;
-  animation: spin 1.3s ease infinite;
+  animation: spin 0.3s ease-out;
   opacity: 0;
-  transition: all 0.3s ease-out;
 }
 .changed-text{
   font-size: 25px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: black;
   position: absolute;
-  top: 150px;
-  left: 22px;
   opacity: 0;
-  transition: all 0.3s ease-out;
+  animation: fadeout 0.3s ease-out;
 }
-
-
+#blur{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(79, 79, 79, 0.622);
+  backdrop-filter: blur(8px)
+}
 
 @keyframes fadein {
   from { opacity: 0; }

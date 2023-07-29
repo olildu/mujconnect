@@ -40,10 +40,22 @@ onAuthStateChanged(auth, (user) => {
 
 function bullshit(uid) {
     const starCountRef = ref(database, '/' + 'chats/' + uid + '/prev_msg_user');
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, '/' + 'chats/' + uid + '/prev_msg_user')).then((snapshot) => {
+        if (snapshot.val() == null){
+            setTimeout(() => {
+                document.getElementById('text').className = 'changed-text'
+                document.getElementById('spinner').className = 'changed-spinner'
+            }, 500);
+            setTimeout(() => {
+                document.getElementById('waiter').remove()
+                document.getElementById('blur').remove()
+            }, 100);
+        }
+    })
 
     onChildAdded(starCountRef, (childSnapshot) => {
         const prev_user = childSnapshot.val();
-        console.log(prev_user)
         const dbRef = ref(getDatabase());
         get(child(dbRef, `/users/${prev_user}`)).then((snapshot) => {
             var prev_user_name = snapshot.val().name;
@@ -71,6 +83,14 @@ function bullshit(uid) {
             userDiv.appendChild(profileNameDiv);
 
             container.appendChild(userDiv);
+            setTimeout(() => {
+                document.getElementById('text').className = 'changed-text'
+                document.getElementById('spinner').className = 'changed-spinner'
+            }, 1500);
+            setTimeout(() => {
+                document.getElementById('waiter').remove()
+                document.getElementById('blur').remove()
+            }, 1600);
             replace_name_pfp();
         });
     });
@@ -283,10 +303,3 @@ document.getElementById("user-search").addEventListener("input", e => {
         }
     }, 200);
 });
-
-
-function onPageLoad() {
-    console.log("Page fully loaded!");
-}
-
-window.onload = onPageLoad;
