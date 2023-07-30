@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAuth, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getStorage } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
-import { getDatabase, ref, get, child, onValue, onChildAdded , update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+import { getDatabase, ref, get, child, onValue, onChildAdded , update, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCFde5Hdt3CTbVw71uK89JThLPCq-6iNa8",
@@ -21,6 +21,8 @@ const database = getDatabase(app);
 var uid;
 var path;
 var path2;
+var path3;
+var path4;
 var msgs_count;
 var chatRef; 
 var update_prev_msg;
@@ -129,28 +131,6 @@ function handleClick() {
     document.getElementById('profile-picture-opp').style.backgroundImage = backgroundImage1;
     send_msg(dataValue, uid);
     read_msgs(dataValue, uid);
-
-    function checkBackgroundImageLoaded(element, imageUrl, callback) {
-        const image = new Image();
-        image.onload = function() {
-          callback(true);
-        };
-        image.onerror = function() {
-          callback(false);
-        };
-        image.src = imageUrl;
-      }
-      
-      const divElement = document.getElementById('profile-picture-opp-prev');
-      
-      checkBackgroundImageLoaded(divElement, function(isLoaded) {
-        if (isLoaded) {
-          console.log('Background image loaded successfully.');
-        } else {
-          console.log('Failed to load background image.');
-        }
-      });
-      
     }
 
 function read_msgs(dataValue, uid) {
@@ -184,38 +164,35 @@ function send_msg(dataValue, uid) {
     document.getElementById("send-msgs").addEventListener("click", function() {
         path = ref(database, "/" + 'chats/' + uid + "/and/" + dataValue);
         path2 = ref(database, "/" + 'chats/' + dataValue + "/and/" + uid);
-        update_prev_msg = ref(database, "/" + 'chats/' + dataValue + "/prev_msg_user");
-    });
+        path3 = ref(database, '/' + 'chats/' + uid + '/prev_msg_user')
+        path4 = ref(database, '/' + 'chats/' + dataValue + '/prev_msg_user')
+        const dataIdValue = document.getElementById("selected-uid").getAttribute("data-id");
 
-    document.getElementById("final-send").addEventListener("click", function() {
-        const starCountRef = ref(database, "/" + '/chats/' + uid + "/and/" + dataValue);
+        const starCountRef = ref(database, "/" + '/chats/' + uid + "/and/" + dataIdValue);
         onValue(starCountRef, (snapshot) => {
+            console.log(snapshot.val())
             if (snapshot.val() === null || snapshot.val() === undefined) {
                 msgs_count = 0;
             } else {
                 msgs_count = Object.keys(snapshot.val()).length;
-                console.log(msgs_count)
+                console.log(Object.keys(snapshot.val()).length)
+
             }
         });
+    });
 
+    document.getElementById("final-send").addEventListener("click", function() {
         var msgs = document.getElementById('send-msgs').value;
         if (msgs === "") {
             return;
         } else {
             var new_count = msgs_count + 1
+            const dataIdValue = document.getElementById("selected-uid").getAttribute("data-id");
+
             update(path, {[new_count+"-me"]: msgs});
             update(path2, {[new_count+"-they"]: msgs});
-
-            const dbRef = ref(getDatabase());
-            get(child(dbRef, `/chats/${dataValue}/prev_msg_user/${uid}`)).then((snapshot) => {
-                if (snapshot.val() === `${uid}`){
-                    
-                }
-                else{
-                    update(update_prev_msg, {[uid]: uid});
-                }
-            })
-
+            update(path3, {[dataIdValue]: dataIdValue})
+            update(path4, {[uid]: uid})
 
             document.getElementById('send-msgs').value = '';
 
