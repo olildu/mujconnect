@@ -27,7 +27,8 @@ body {
     top: 0;
     z-index: 2;
     flex: 0;
-    transition: min-width 1s ease-in-out;
+    transition: min-width 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .home-div {
@@ -68,10 +69,10 @@ body {
 
 .logo-div {
   border-radius: 10px;
-  transition: all 0.5s;
   position: absolute;
   top: 10px;
   left: -60px;
+  transition: left 0.4s ease-in;
 }
 
 .logo-div:hover {
@@ -101,16 +102,28 @@ body {
 }
 
 .text-holder {
-  display: flex;
+  position: relative;
+  margin-top: auto;
   margin: 0;
   position: absolute;
   top: 50%;
-  left: -20px;
+  left: 0px;
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  transition: all 0.5s;
-  flex-direction: column;
+  margin-left: -3px;
+  transition: left 0.4s ease-in;
 }
-
+.text-holder div{
+  width: 60px;
+}
+.underline {
+  position: relative;
+  width: 30px;
+  height: 1px;
+  top: 7px;
+  left: 14px;
+  background-color: rgba(255, 255, 255, 0.523);
+}
 .prev-messages {
   position: relative;
   flex: 1;

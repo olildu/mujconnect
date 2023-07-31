@@ -280,3 +280,45 @@ document.getElementById("user-search").addEventListener("input", e => {
         }
     }, 200);
 });
+let mouseTimer;
+let leftBarExpanded = false;
+
+function handleMouseMove(event) {
+  const mouseX = event.clientX;
+
+  if (mouseX <= 5) {
+    clearTimeout(mouseTimer);
+    mouseTimer = setTimeout(() => {
+      if (!leftBarExpanded) {
+        expandLeftBar();
+      }
+    }, 700);
+  } else {
+    clearTimeout(mouseTimer);
+  }
+}
+
+function expandLeftBar() {
+  document.getElementById('nav-bar').style.minWidth = '70px';
+  document.getElementById('text-holder').style.left = '50%';
+  document.getElementById('logo-div').style.left = '4px';
+  leftBarExpanded = true;
+}
+
+function collapseLeftBar() {
+  document.getElementById('nav-bar').style.minWidth = '0';
+  document.getElementById('text-holder').style.left = '0';
+  document.getElementById('logo-div').style.left = '-60px';
+  leftBarExpanded = false;
+}
+
+document.addEventListener('mousemove', handleMouseMove);
+
+document.addEventListener('click', function(event) {
+  const leftBar = document.getElementById('nav-bar');
+  if (!leftBar.contains(event.target)) {
+    if (leftBarExpanded) {
+      collapseLeftBar();
+    }
+  }
+});
