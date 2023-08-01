@@ -292,7 +292,7 @@ function handleMouseMove(event) {
       if (!leftBarExpanded) {
         expandLeftBar();
       }
-    }, 700);
+    }, 200);
   } else {
     clearTimeout(mouseTimer);
   }

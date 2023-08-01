@@ -20,7 +20,7 @@ const auth = getAuth();
 var re;
 
 document.getElementById("home-div").addEventListener("click", function() {
-    window.location = '/main.html'
+    window.location = '/home.html'
 })
 document.getElementById("chat-div").addEventListener("click", function() {
     window.location = '/chat.html'

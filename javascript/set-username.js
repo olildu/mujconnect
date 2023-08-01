@@ -24,7 +24,7 @@ onAuthStateChanged(auth, (user) => {
     if(Name == 'null'){
     }
     else {
-      window.location = '/main.html' 
+      window.location = '/home.html' 
   }}
 });
 
@@ -47,7 +47,7 @@ document.getElementById("done-button").addEventListener("click", function() {
         console.log(auth.currentUser.uid, auth.currentUser.displayName)
         update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: auth.currentUser.displayName})
 
-        window.location = '/main.html'
+        window.location = '/home.html'
       })
 })
 

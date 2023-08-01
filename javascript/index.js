@@ -20,6 +20,6 @@ onAuthStateChanged(auth, (user) => {
     if (user == null) {
         window.location = '/login.html';
     } else {
-        window.location = '/main.html'
+        window.location = '/home.html'
     }
 });

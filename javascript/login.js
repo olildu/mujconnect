@@ -42,7 +42,7 @@ document.getElementById("signup-button").addEventListener("click", function() {
             window.location = '/set-username.html'
           }
           else{
-            window.location = '/main.html'
+            window.location = '/home.html'
             }
         }
       });
