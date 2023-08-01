@@ -158,6 +158,7 @@ function read_msgs(dataValue, uid) {
         messageParagraph.textContent = newMessage;
         messageDiv.appendChild(messageParagraph);
         liveMessageContainer.appendChild(messageDiv);
+        scrollToBottom();
     });
 }
 function send_msg(dataValue, uid) {
@@ -170,12 +171,10 @@ function send_msg(dataValue, uid) {
 
         const starCountRef = ref(database, "/" + '/chats/' + uid + "/and/" + dataIdValue);
         onValue(starCountRef, (snapshot) => {
-            console.log(snapshot.val())
             if (snapshot.val() === null || snapshot.val() === undefined) {
                 msgs_count = 0;
             } else {
                 msgs_count = Object.keys(snapshot.val()).length;
-                console.log(Object.keys(snapshot.val()).length)
 
             }
         });
@@ -271,9 +270,6 @@ document.getElementById("user-search").addEventListener("input", e => {
                         }
                     });
                 })
-                .catch(error => {
-                    console.error("Error searching for users:", error);
-                });
         } else {
             const container = document.getElementById("final-users");
             container.innerHTML = "";
@@ -322,3 +318,7 @@ document.addEventListener('click', function(event) {
     }
   }
 });
+function scrollToBottom() {
+    const liveMessage = document.getElementById("live-message");
+    liveMessage.scrollTop = liveMessage.scrollHeight;
+  }

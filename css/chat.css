@@ -297,13 +297,15 @@ body {
 }
 .live-message {
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
   padding: 10px;
   flex: 2;
   height: 80vh;
   gap: 2px;
+  max-height: calc(80vh - 60px);
+  overflow-y: auto;
+  border: 1px solid #ccc; /* Optional: Add a border for better appearance */
 }
 #msg1 {
   width: fit-content;
@@ -313,6 +315,7 @@ body {
   color: white;
   display: flex;
   justify-content: center;
+  margin-top: auto;
 }
 #msg1 p {
   margin: 0;
