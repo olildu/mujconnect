@@ -186,7 +186,7 @@ body {
     overflow-y: auto;
   }
 
-#user {
+  #user {
     border-bottom: 1px solid #c3c4c58b;
     width: 100%;
     height: 90px;
@@ -196,6 +196,7 @@ body {
     justify-content: flex-start;
     transition: 0.2s all ease-out;
     cursor: pointer;
+    align-items: center;
 }
 #user:hover{
     background-color: rgba(184, 184, 184, 0.4);
@@ -242,7 +243,6 @@ body {
     background-position: center;
     background-size: cover;
     margin-left: 10px;
-    margin-top: 5px;
     border-radius: 50%;
   }
   .opp-user-information {
@@ -315,11 +315,13 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  margin-top: auto;
 }
 #msg1 p {
   margin: 0;
   padding: 6px 10px;
+}
+.me{
+  margin-top: auto;
 }
 .they{
   margin-right: auto;
@@ -422,7 +424,23 @@ body {
   background-color: rgba(79, 79, 79, 0.622);
   backdrop-filter: blur(8px)
 }
-
+#message-count {
+  background-color: firebrick;
+  display: flex;
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 19px;
+  color: white;
+}
+#message-count p{
+  color: white;
+}
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
