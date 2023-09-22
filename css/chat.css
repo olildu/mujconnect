@@ -305,7 +305,8 @@ body {
   gap: 2px;
   max-height: calc(80vh - 60px);
   overflow-y: auto;
-  border: 1px solid #ccc; /* Optional: Add a border for better appearance */
+  border: 1px solid #ccc;
+  justify-content: flex-end;
 }
 #msg1 {
   width: fit-content;
@@ -320,9 +321,7 @@ body {
   margin: 0;
   padding: 6px 10px;
 }
-.me{
-  margin-top: auto;
-}
+
 .they{
   margin-right: auto;
 }
