@@ -246,7 +246,18 @@ body{
     left: 170px;
     top: 90px;
     font-family: 'Inria Sans', sans-serif;
-
+}
+#link_url{
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    color: white;
+    width: 355px;
+    font-size: 20px;
+    position: absolute;
+    left: 170px;
+    top: 90px;
+    font-family: 'Inria Sans', sans-serif;
 }
 .showminutes{
     color: rgba(255, 255, 255, 0.841);
@@ -296,6 +307,18 @@ body{
     left: 170px;
     top: 80px;
     font-family: 'Inria Sans', sans-serif;
+}
+.player {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 30px;
+    top: 130px;
+    font-family: 'Inria Sans', sans-serif;
+    cursor: pointer;
+}
+#player_class_children{
+    display: none;
 }
 .line{
     width: 62px;

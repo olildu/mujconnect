@@ -67,14 +67,22 @@
                     <input class="minutes" id="minutes" min="1" autocomplete="off" >
                     <p class="showminutes">minutes</p>
                     <p class="note">Use this space to change time according to your needs.<br>Please note that to keep time in the format of whole<br> numbers and not a floating value. Thank you :)</p>
-            
+                </div>
+            </div>
+            <div class="player_class">
+                <p class="player" id="player" onclick="player_f()">Music</p>
+                    <div id="player_class_children">
+                    <p class="pomodoro">Set your own playlist</p>
+                    <input class="minutes" id="link_url" min="1" autocomplete="off" >
+                    <p class="showminutes">Link</p>
+                    <p class="note">Now you can choose your own playlist to listen to from<br> spotify. Just paste the link to the entry. Go to spotify click <br> copy playlist and paste the link here.</p>
                 </div>
             </div>
             <button onclick="outside()" class="save-changes">Save Changes</button>
             <button class="close">Close</button>
         </div>
         <div id="spotify-player">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM?utm_source=generator&theme=0" width="120%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe id="spotify-url-container" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1fbINQORA5k1jenQN887Im?si=19b31b722461426f?utm_source=generator&theme=0" width="120%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
         <div id="blur" onclick="outside()"></div>
     </body>

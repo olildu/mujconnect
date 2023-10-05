@@ -83,7 +83,7 @@ function outside(){
     var minutes = document.getElementById('minutes')
     var theme = document.getElementById('select-theme').value
     var background = document.body
-
+    var url = document.getElementById('link_url').value
 
     element1.style.animation = 'fadeout 0.4s ease-out forwards';
     outer.style.animation = 'fadeout 0.4s ease-out forwards';
@@ -114,6 +114,17 @@ function outside(){
         prev_min = mins*60
     }
 
+    if (url == " "){
+        return
+    }
+    if (url == ""){
+        return
+    }
+    else{
+        var final_code = url.slice(34, 56)
+        var change_url = document.getElementById('spotify-url-container')
+        change_url.src = "https://open.spotify.com/embed/playlist/"+ final_code +"?utm_source=generator&theme=0"
+    }
 
 }
 
@@ -161,25 +172,11 @@ spotify_player.addEventListener('mouseout', () => {
 });
 
 
-function timer_f(){
-    var general_children =  document.getElementById('general_class_children')
-    var timer_children = document.getElementById('timer_class_children')
-    var line = document.getElementById('line')
 
-    general_children.style.animation = 'fadeout 0.2s ease-out forwards';
-
-    setTimeout(dissaper,300)
-    
-    timer_children.style.animation = 'fadein 0.2s ease-in forwards';
-    timer_children.style.display = 'block'
-    line.style.opacity = '0'
-    line.style.top = '130px'
-    line.style.opacity = '1'
-    line.style.widows = '55px'
-}
 
 function timer_f(){
     var general_children =  document.getElementById('general_class_children')
+    var player_children = document.getElementById('player_class_children')
     var timer_children = document.getElementById('timer_class_children')
     var line = document.getElementById('line')
 
@@ -187,6 +184,12 @@ function timer_f(){
 
     setTimeout(function(){
         general_children.style.display = 'none'
+    },300)
+    
+    player_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        player_children.style.display = 'none'
     },300)
     
     timer_children.style.animation = 'fadein 0.2s ease-in forwards';
@@ -197,9 +200,39 @@ function timer_f(){
     line.style.width = '55px'
 }
 
+function player_f(){
+    var general_children =  document.getElementById('general_class_children')
+    var timer_children =  document.getElementById('timer_class_children')
+    var player_children = document.getElementById('player_class_children')
+    var line = document.getElementById('line')
+
+    general_children.style.animation = 'fadeout 0.2s ease-out forwards';
+    timer_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        general_children.style.display = 'none'
+    },300)
+    
+    timer_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        timer_children.style.display = 'none'
+    },300)
+
+    player_children.style.animation = 'fadein 0.2s ease-in forwards';
+    player_children.style.display = 'block'
+    line.style.opacity = '0'
+    line.style.top = '178px'
+    line.style.opacity = '1'
+    line.style.width = '48px'
+}
+
+
 function general_f(){
     var general_children =  document.getElementById('general_class_children')
     var timer_children = document.getElementById('timer_class_children')
+    var player_children = document.getElementById('player_class_children')
+
     var line = document.getElementById('line')
 
     timer_children.style.animation = 'fadeout 0.2s ease-out forwards';
@@ -208,6 +241,13 @@ function general_f(){
         timer_children.style.display = 'none'
     },300)
     
+
+    player_children.style.animation = 'fadeout 0.2s ease-out forwards';
+
+    setTimeout(function(){
+        player_children.style.display = 'none'
+    },300)
+
     general_children.style.animation = 'fadein 0.2s ease-in forwards';
     general_children.style.display = 'block'
     line.style.opacity = '0'
