@@ -440,16 +440,45 @@ body {
 #message-count p{
   color: white;
 }
-@keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes fadeout{
-  from { opacity: 1; }
-  to   { opacity: 0; }
-}
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes fadeout{
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  color: white;
+  position: relative;
+  z-index: 1;
+  padding-right: 7px;
+  padding-top: 7px;
+}
+.one-animation{
+  display: flex;
+}
+
+@media screen and (max-width: 600px){
+  .current-messages{
+      display: none;
+      min-width: 362px;
+  }
+  .send-message textarea{
+    width: 85%;
+  }
+  .send-message{
+    padding-left: 16px;
+    padding-top: 20px;
+  }
+  .send-message{
+    padding-left: 10px;
   }
 }

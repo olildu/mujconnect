@@ -123,6 +123,19 @@ function handleClick() {
         }, 100);
     }
 
+    function isMobileDevice() {
+        const mobileWidthThreshold = 768; 
+    
+        return window.innerWidth < mobileWidthThreshold;
+    }
+    
+    if (isMobileDevice()) {
+        document.getElementById("prev-messages").style.display = "none";
+        document.getElementById("current-messages").style.display = "block";
+    } else {
+        console.log('Not a mobile device');
+    }
+
     const dataValue = this.getAttribute("data-id");
     document.getElementById('selected-uid').setAttribute("data-id", dataValue);
     const profileName = this.querySelector('h2').textContent;
@@ -345,3 +358,8 @@ sendMsgTextarea.addEventListener('keydown', (event) => {
     }
   }
 });
+
+document.getElementById("one-animation").addEventListener("click", function() {
+    document.getElementById("prev-messages").style.display = "block";
+    document.getElementById("current-messages").style.display = "none";
+})
