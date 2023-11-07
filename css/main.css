@@ -336,3 +336,49 @@ body{
     from { opacity: 1; }
     to   { opacity: 0; }
 }
+
+@media screen and (max-width: 600px) {
+    .left-bar {
+        width: 0px;
+    }
+    .flex-container {
+        left: 50%;
+    }
+    .background-image{
+        margin-left: 0;
+    }
+    .text-holder{
+        left: -100px;
+    }
+    .background-image h1{
+        top: 115px;
+        font-size: 50;
+        left: 87px;
+    }
+    .background-image h2 {
+        font-size: 30px;
+        left: 50%;
+    }
+    .flex-container {
+        margin-left: 0;
+    }
+    .children{
+        width: 130%
+    }
+    .children h2 {
+        font-size: 20;
+        bottom: 27px;
+    }
+    .children p {
+        bottom: -12px;
+    }
+    #smaller-text{
+        bottom: 2px;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

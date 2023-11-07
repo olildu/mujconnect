@@ -31,6 +31,7 @@ onAuthStateChanged(auth, (user) => {
 document.getElementById("done-button").addEventListener("click", function() {
     var name = document.getElementById('user').value
     var path = ref(database, "/" + 'users/' + auth.currentUser.uid);
+    var path2 = ref(database, "/" + 'users/' + "name_uid/");
 
     updateProfile(auth.currentUser, {
         displayName: name
@@ -43,9 +44,12 @@ document.getElementById("done-button").addEventListener("click", function() {
         update(path, {pfp: auth.currentUser.photoURL});
         update(path, {id: auth.currentUser.uid});
         update(path, {name: auth.currentUser.displayName});
+        update(path2, {[auth.currentUser.uid] : auth.currentUser.displayName});
+        // update(path2, {[auth.currentUser.uid] : name});
 
         console.log(auth.currentUser.uid, auth.currentUser.displayName)
-        update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: auth.currentUser.displayName})
+        console.log("/" + 'users/' + auth.currentUser.uid)
+        // update(ref(database, "/users/name_uid/"  ), {[auth.currentUser.uid]: auth.currentUser.displayName})
 
         window.location = '/home.html'
       })

@@ -322,3 +322,26 @@ function scrollToBottom() {
     const liveMessage = document.getElementById("live-message");
     liveMessage.scrollTop = liveMessage.scrollHeight;
   }
+
+const sendMsgTextarea = document.getElementById('send-msgs');
+sendMsgTextarea.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && !event.shiftKey) {
+    console.log('Enter key pressed!');
+    event.preventDefault()
+    var msgs = document.getElementById('send-msgs').value;
+    if (msgs === "") {
+        return;
+    } else {
+        
+        var new_count = msgs_count + 1
+        const dataIdValue = document.getElementById("selected-uid").getAttribute("data-id");
+
+        update(path, {[new_count+"-me"]: msgs});
+        update(path2, {[new_count+"-they"]: msgs});
+        update(path3, {[dataIdValue]: dataIdValue})
+        update(path4, {[uid]: uid})
+
+        document.getElementById('send-msgs').value = '';
+    }
+  }
+});
